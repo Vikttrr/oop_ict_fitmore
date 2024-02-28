@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "UlzaMsfyYPuvnAIT3SvcCAz+oUk7ZQ0BaaCZe9HGoFEM6G1Q+7t92TZm5X+qTo27fMrRbG9JnRJ/uAyjRWTeNg==",
+  "success": true,
+  "projectFilePath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj",
+  "expectedPackageFiles": [
+    "/Users/viktorianakonecnaa/.nuget/packages/itmo.dev.editorconfig/1.0.2/itmo.dev.editorconfig.1.0.2.nupkg.sha512",
+    "/Users/viktorianakonecnaa/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "/Users/viktorianakonecnaa/.nuget/packages/stylecop.analyzers/1.2.0-beta.435/stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
+    "/Users/viktorianakonecnaa/.nuget/packages/stylecop.analyzers.unstable/1.2.0.435/stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
+    "/Users/viktorianakonecnaa/.nuget/packages/system.linq.async/6.0.1/system.linq.async.6.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
