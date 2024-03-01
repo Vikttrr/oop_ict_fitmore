@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj": {}
+    "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj": {}
   },
   "projects": {
-    "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj": {
+    "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj",
+        "projectUniqueName": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj",
         "projectName": "FitmoRE.Application.Abstractions",
-        "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj",
+        "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj",
         "packagesPath": "/Users/viktorianakonecnaa/.nuget/packages/",
-        "outputPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Abstractions/obj/",
+        "outputPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
@@ -27,8 +27,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj": {
-                "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj"
+              "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj": {
+                "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj"
               }
             }
           }
@@ -99,14 +99,14 @@
         }
       }
     },
-    "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj": {
+    "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj",
+        "projectUniqueName": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj",
         "projectName": "FitmoRE.Application.Contracts",
-        "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj",
+        "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj",
         "packagesPath": "/Users/viktorianakonecnaa/.nuget/packages/",
-        "outputPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Contracts/obj/",
+        "outputPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
@@ -122,8 +122,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj": {
-                "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj"
+              "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj": {
+                "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj"
               }
             }
           }
@@ -189,14 +189,14 @@
         }
       }
     },
-    "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj": {
+    "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj",
+        "projectUniqueName": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj",
         "projectName": "FitmoRE.Application.Models",
-        "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj",
+        "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj",
         "packagesPath": "/Users/viktorianakonecnaa/.nuget/packages/",
-        "outputPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/obj/",
+        "outputPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
@@ -275,14 +275,14 @@
         }
       }
     },
-    "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj": {
+    "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj",
+        "projectUniqueName": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj",
         "projectName": "FitmoRE.Application",
-        "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj",
+        "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj",
         "packagesPath": "/Users/viktorianakonecnaa/.nuget/packages/",
-        "outputPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application/obj/",
+        "outputPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
@@ -298,11 +298,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj": {
-                "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj"
+              "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj": {
+                "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj"
               },
-              "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj": {
-                "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj"
+              "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj": {
+                "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj"
               }
             }
           }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/viktorianakonecnaa/proga/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj": {}
+    "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj": {}
   },
   "projects": {
-    "/Users/viktorianakonecnaa/proga/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj": {
+    "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj",
+        "projectUniqueName": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj",
         "projectName": "FitmoRE.Presentation.Http",
-        "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj",
+        "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj",
         "packagesPath": "/Users/viktorianakonecnaa/.nuget/packages/",
-        "outputPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/obj/",
+        "outputPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [

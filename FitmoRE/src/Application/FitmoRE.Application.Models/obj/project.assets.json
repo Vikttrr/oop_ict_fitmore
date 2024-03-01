@@ -171,11 +171,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj",
+      "projectUniqueName": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj",
       "projectName": "FitmoRE.Application.Models",
-      "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj",
+      "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj",
       "packagesPath": "/Users/viktorianakonecnaa/.nuget/packages/",
-      "outputPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/obj/",
+      "outputPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/obj/",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [

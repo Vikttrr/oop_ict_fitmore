@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FitmoRE.Application.Models
-build_property.ProjectDir = /Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Models/
+build_property.ProjectDir = /Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

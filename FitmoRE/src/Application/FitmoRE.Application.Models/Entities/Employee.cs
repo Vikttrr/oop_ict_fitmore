@@ -16,23 +16,17 @@ public class Employee
 
     public string Position { get; set; }
 
-    public decimal Salary { get; set; }
+    public bool IsActive { get; set; }
 
-    public bool IsOwner { get; set; }
-
-    public string Type { get; set; }
-
-    public Employee(int employeeid, string fullName, string phoneNumber, string email, DateTime startDate, string workSchedule, string position, decimal salary, bool isOwner, string type)
+    public Employee(int id, string fullName, string phoneNumber, string email, DateTime startDate, string workSchedule, string position, bool isActive)
     {
-        EmployeeId = employeeid;
+        EmployeeId = id;
         FullName = fullName;
         PhoneNumber = phoneNumber;
         Email = email;
         StartDate = startDate;
         WorkSchedule = workSchedule;
         Position = position;
-        Salary = salary;
-        IsOwner = isOwner;
-        Type = type;
+        IsActive = isActive;
     }
 }
