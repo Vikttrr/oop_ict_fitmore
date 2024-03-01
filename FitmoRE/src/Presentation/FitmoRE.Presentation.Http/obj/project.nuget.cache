@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jaYrqvH7Un7OUv48I0jNpssr0eXCGKiECop2VfWZIfpLbmfei2uFjO6ZnRbC5iQbuMqLth8pS5V2Ce9iLwEm8Q==",
+  "dgSpecHash": "JonQO3scNJZM/as/Ae9ljcIJDfBJXFT5iTevWY04e88ZYyQ1QDWJG3zmQHjHqWrFNUwJCQkANsYvhd/4IzVUiQ==",
   "success": true,
-  "projectFilePath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj",
+  "projectFilePath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Presentation/FitmoRE.Presentation.Http/FitmoRE.Presentation.Http.csproj",
   "expectedPackageFiles": [
     "/Users/viktorianakonecnaa/.nuget/packages/itmo.dev.editorconfig/1.0.2/itmo.dev.editorconfig.1.0.2.nupkg.sha512",
     "/Users/viktorianakonecnaa/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

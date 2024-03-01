@@ -14,9 +14,9 @@ public class Client
 
     public string Address { get; set; }
 
-    public string SubscriptionType { get; set; }
+    public bool IsActive { get; set; }
 
-    public Client(int clientId, string fullName, DateTime dateOfBirth, string phoneNumber, string email, string address, string subscriptionType)
+    public Client(int clientId, string fullName, DateTime dateOfBirth, string phoneNumber, string email, string address, bool isActive)
     {
         ClientId = clientId;
         FullName = fullName;
@@ -24,6 +24,6 @@ public class Client
         PhoneNumber = phoneNumber;
         Email = email;
         Address = address;
-        SubscriptionType = subscriptionType;
+        IsActive = isActive;
     }
 }

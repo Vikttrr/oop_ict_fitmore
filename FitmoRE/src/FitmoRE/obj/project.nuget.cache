@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mNApKOjq9VPi5TtsHJ4Y0jeRZYnzojSAN94/CHVEE5Jc2o+m1/BqlUvAp02JhOMaoID2uEBTg4N5yKYWG8GwMg==",
+  "dgSpecHash": "5e3G8nSewG7HkXekD4e9ArUPG2JVlR6FwAJqSW75HPOgn9Je3Rz1BPaj4cu9MXr5A/HDv8yGWNSNJXHpqjhDxg==",
   "success": true,
-  "projectFilePath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/FitmoRE/FitmoRE.csproj",
+  "projectFilePath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/FitmoRE/FitmoRE.csproj",
   "expectedPackageFiles": [
     "/Users/viktorianakonecnaa/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/viktorianakonecnaa/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",

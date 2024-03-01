@@ -1,34 +1,29 @@
-namespace FitmoRE.Application.Models.Entities;
-
 public class TrainingSession
 {
     public int TrainingId { get; set; }
 
     public int RoomId { get; set; }
 
-    public int EmployeeId { get; set; }
-
-    public int EquipmentId { get; set; }
-
     public int TrainerId { get; set; }
+
+    public int EmployeeId { get; set; }
 
     public int NumberOfParticipants { get; set; }
 
-    public DateTime Time { get; set; }
+    public DateTime StartTime { get; set; }
 
-    public TimeSpan Duration { get; set; }
+    public DateTime EndTime { get; set; }
 
     public string Description { get; set; }
 
-    public TrainingSession(int trainingId, int employeeId, int roomId, int trainerId, int equipmentId, int numberOfParticipants, DateTime time, TimeSpan duration, string description)
+    public TrainingSession(int trainingId, int roomId, int employeeId, int trainerId, int numberOfParticipants, DateTime startTime, DateTime endTime, string description)
     {
         EmployeeId = employeeId;
         RoomId = roomId;
         TrainerId = trainerId;
-        EquipmentId = equipmentId;
         NumberOfParticipants = numberOfParticipants;
-        Time = time;
-        Duration = duration;
+        StartTime = startTime;
+        EndTime = endTime;
         Description = description;
     }
 }

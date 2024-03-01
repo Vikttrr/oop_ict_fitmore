@@ -396,11 +396,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj",
+      "projectUniqueName": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj",
       "projectName": "FitmoRE.Application",
-      "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj",
+      "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj",
       "packagesPath": "/Users/viktorianakonecnaa/.nuget/packages/",
-      "outputPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application/obj/",
+      "outputPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/obj/",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [
@@ -416,11 +416,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj": {
-              "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj"
+            "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj": {
+              "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj"
             },
-            "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj": {
-              "projectPath": "/Users/viktorianakonecnaa/proga/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj"
+            "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj": {
+              "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj"
             }
           }
         }
