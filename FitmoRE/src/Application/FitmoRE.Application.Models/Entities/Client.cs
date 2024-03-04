@@ -6,7 +6,7 @@ public class Client
 
     public string FullName { get; set; }
 
-    public DateTime DateOfBirth { get; set; }
+    public string DateOfBirth { get; set; }
 
     public string PhoneNumber { get; set; }
 
@@ -16,7 +16,7 @@ public class Client
 
     public bool IsActive { get; set; }
 
-    public Client(int clientId, string fullName, DateTime dateOfBirth, string phoneNumber, string email, string address, bool isActive)
+    public Client(int clientId, string fullName, string dateOfBirth, string phoneNumber, string email, string address, bool isActive)
     {
         ClientId = clientId;
         FullName = fullName;

@@ -10,7 +10,7 @@ public class Employee
 
     public string Email { get; set; }
 
-    public DateTime StartDate { get; set; }
+    public string StartDate { get; set; }
 
     public string WorkSchedule { get; set; }
 
@@ -18,7 +18,7 @@ public class Employee
 
     public bool IsActive { get; set; }
 
-    public Employee(int id, string fullName, string phoneNumber, string email, DateTime startDate, string workSchedule, string position, bool isActive)
+    public Employee(int id, string fullName, string phoneNumber, string email, string startDate, string workSchedule, string position, bool isActive)
     {
         EmployeeId = id;
         FullName = fullName;
