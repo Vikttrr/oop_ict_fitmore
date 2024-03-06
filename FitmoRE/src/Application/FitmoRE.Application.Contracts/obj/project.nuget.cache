@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "1f8q51qfvJRSQozIuyFny/p2NNQwVdVUrwUYBv7pZRzGhNMGPggd82EpJEBbGPQJXbIWWA0GBKhYR+daGx736g==",
+  "dgSpecHash": "W/N1yx7sBh2rUg4MsLC26D4HUi0QasNnV8Uy2E3R/zZgE1h/CA5GM0CkA7YYd0Nly2VoVYehhnir2kdB03nyGA==",
   "success": true,
-  "projectFilePath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj",
+  "projectFilePath": "C:\\Users\\dasha\\RiderProjects\\oop_ict_fitmore\\FitmoRE\\src\\Application\\FitmoRE.Application.Contracts\\FitmoRE.Application.Contracts.csproj",
   "expectedPackageFiles": [
-    "/Users/viktorianakonecnaa/.nuget/packages/itmo.dev.editorconfig/1.0.2/itmo.dev.editorconfig.1.0.2.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/stylecop.analyzers/1.2.0-beta.435/stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/stylecop.analyzers.unstable/1.2.0.435/stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/system.linq.async/6.0.1/system.linq.async.6.0.1.nupkg.sha512"
+    "C:\\Users\\dasha\\.nuget\\packages\\itmo.dev.editorconfig\\1.0.2\\itmo.dev.editorconfig.1.0.2.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\system.linq.async\\6.0.1\\system.linq.async.6.0.1.nupkg.sha512"
   ],
   "logs": []
 }

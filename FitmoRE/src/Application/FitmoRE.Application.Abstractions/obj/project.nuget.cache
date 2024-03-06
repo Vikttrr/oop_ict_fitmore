@@ -1,19 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "Y5scY4a63yBEzBaqBHuh6a6INOH90uTc/EjSMeRpKBsVlr1fXavk6xFokcoc3i2nldHQiqFLJ4MWCrxfO74QCg==",
+  "dgSpecHash": "PSa59kw0qBs7zEItfkzfUGvqXWnx4/lww0hICHk+shXQe3CH20wVQT4c64ewrfSXuJSVZRn1sC8vdtswRONaIg==",
   "success": true,
-  "projectFilePath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj",
+  "projectFilePath": "C:\\Users\\dasha\\RiderProjects\\oop_ict_fitmore\\FitmoRE\\src\\Application\\FitmoRE.Application.Abstractions\\FitmoRE.Application.Abstractions.csproj",
   "expectedPackageFiles": [
-    "/Users/viktorianakonecnaa/.nuget/packages/itmo.dev.editorconfig/1.0.2/itmo.dev.editorconfig.1.0.2.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/sourcekit/1.1.24/sourcekit.1.1.24.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/sourcekit.analyzers.mustbepartial/1.1.24/sourcekit.analyzers.mustbepartial.1.1.24.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/sourcekit.analyzers.mustbepartial.annotations/1.1.24/sourcekit.analyzers.mustbepartial.annotations.1.1.24.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/sourcekit.generators.builder/1.1.24/sourcekit.generators.builder.1.1.24.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/sourcekit.generators.builder.annotations/1.1.24/sourcekit.generators.builder.annotations.1.1.24.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/stylecop.analyzers/1.2.0-beta.435/stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/stylecop.analyzers.unstable/1.2.0.435/stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
-    "/Users/viktorianakonecnaa/.nuget/packages/system.linq.async/6.0.1/system.linq.async.6.0.1.nupkg.sha512"
+    "C:\\Users\\dasha\\.nuget\\packages\\itmo.dev.editorconfig\\1.0.2\\itmo.dev.editorconfig.1.0.2.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\sourcekit\\1.1.24\\sourcekit.1.1.24.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\sourcekit.analyzers.mustbepartial\\1.1.24\\sourcekit.analyzers.mustbepartial.1.1.24.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\sourcekit.analyzers.mustbepartial.annotations\\1.1.24\\sourcekit.analyzers.mustbepartial.annotations.1.1.24.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\sourcekit.generators.builder\\1.1.24\\sourcekit.generators.builder.1.1.24.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\sourcekit.generators.builder.annotations\\1.1.24\\sourcekit.generators.builder.annotations.1.1.24.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\system.linq.async\\6.0.1\\system.linq.async.6.0.1.nupkg.sha512"
   ],
   "logs": []
 }
