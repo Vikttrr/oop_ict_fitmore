@@ -1,52 +1,74 @@
-namespace FitmoRE.Application.Services
+using FitmoRE.Application.DTO;
+using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Entities.Repositories;
+
+namespace FitmoRE.Application.Services;
+public interface ITrainingService
 {
-    using FitmoRE.Application.DTO;
-    using FitmoRE.Application.Models.Entities;
-    using FitmoRE.Application.Repositories;
+    void AddTraining(AddTrainingDto trainingDto);
 
-    public interface ITrainingService
+    TrainingInfoResponseDto GetTrainingInfo(int trainingId);
+
+    TrainingSignupResponseDto SignupForTraining(TrainingSignupDto signupDto);
+}
+
+public class TrainingService : ITrainingService
+{
+    private readonly ITrainingRepository _trainingRepository;
+    private readonly ITrainingRegistrationRepository _trainingRegistrationRepository;
+
+    public TrainingService(ITrainingRepository trainingRepository, ITrainingRegistrationRepository trainingRegistrationRepository)
     {
-        TrainingSession AddTraining(TrainingDto dto);
-
-        TrainingSession GetTrainingById(int trainingId);
+        _trainingRepository = trainingRepository;
+        _trainingRegistrationRepository = trainingRegistrationRepository;
     }
 
-    public class TrainingService : ITrainingService
+    public void AddTraining(AddTrainingDto trainingDto)
     {
-        private readonly ITrainingRepository _trainingRepository;
+        var trainingSession = new TrainingSession(
+            0,
+            trainingDto.RoomId,
+            trainingDto.EmployeeId,
+            0,
+            trainingDto.ParticipantsNumber,
+            trainingDto.StartTime,
+            trainingDto.EndTime,
+            trainingDto.Description);
+        _trainingRepository.Add(trainingSession);
+    }
 
-        public TrainingService(ITrainingRepository trainingRepository)
+    public TrainingInfoResponseDto GetTrainingInfo(int trainingId)
+    {
+        var training = _trainingRepository.GetById(trainingId);
+        if (training == null)
         {
-            _trainingRepository = trainingRepository;
+            throw new InvalidOperationException("Training session is not found");
         }
 
-        public TrainingSession AddTraining(TrainingDto dto)
+        return new TrainingInfoResponseDto
         {
-            var trainingSession = new TrainingSession(
-                0,
-                dto.RoomId,
-                dto.EmployeeId,
-                dto.TrainerId,
-                dto.NumberOfParticipants,
-                dto.StartTime,
-                dto.EndTime,
-                dto.Description);
+            RoomId = training.RoomId,
+            EmployeeId = training.EmployeeId,
+            ParticipantsNumber = training.NumberOfParticipants,
+            StartTime = training.StartTime,
+            EndTime = training.EndTime,
+            Description = training.Description,
+        };
+    }
 
-            _trainingRepository.Add(trainingSession);
-            _trainingRepository.SaveChanges();
+    public TrainingSignupResponseDto SignupForTraining(TrainingSignupDto signupDto)
+    {
+        var trainingRegistration = new TrainingRegistration(
+            0,
+            signupDto.TrainingId,
+            signupDto.ClientId,
+            DateTime.Parse(signupDto.DateTime),
+            true);
+        _trainingRegistrationRepository.Add(trainingRegistration);
 
-            return trainingSession;
-        }
-
-        public TrainingSession GetTrainingById(int trainingId)
+        return new TrainingSignupResponseDto
         {
-            var trainingSession = _trainingRepository.GetById(trainingId);
-            if (trainingSession == null)
-            {
-                throw new KeyNotFoundException("Training session not found with ID " + trainingId);
-            }
-
-            return trainingSession;
-        }
+            IsConfirmed = true,
+        };
     }
 }

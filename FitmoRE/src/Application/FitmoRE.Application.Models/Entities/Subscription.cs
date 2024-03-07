@@ -6,13 +6,13 @@ public class Subscription
 
     public decimal Price { get; set; }
 
-    public DateTime StartDate { get; set; }
+    public string StartDate { get; set; }
 
-    public TimeSpan Duration { get; set; }
+    public string Duration { get; set; }
 
     public bool IsActive { get; set; }
 
-    public Subscription(int subscriptionId, decimal price, DateTime startDate, TimeSpan duration, bool isActive)
+    public Subscription(int subscriptionId, decimal price, string startDate, string duration, bool isActive)
     {
         SubscriptionId = subscriptionId;
         Price = price;

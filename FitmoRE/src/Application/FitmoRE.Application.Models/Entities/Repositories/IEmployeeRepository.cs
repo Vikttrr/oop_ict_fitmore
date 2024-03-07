@@ -1,10 +1,15 @@
-namespace FitmoRE.Application.Models.Entities.Repositories;
-
-public interface IEmployeeRepository
+namespace FitmoRE.Application.Models.Entities.Repositories
 {
-    void Add(Employee employee);
+    public interface IEmployeeRepository
+    {
+        void Add(Employee employee);
 
-    Employee GetById(int employeeId);
+        Employee GetById(int employeeId);
 
-    void SaveChanges();
+        void Update(Employee employee);
+
+        void Delete(int employeeId);
+
+        IEnumerable<Employee> GetAll();
+    }
 }

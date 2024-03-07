@@ -6,9 +6,7 @@ public interface IPaymentRepository
 
     Payment GetById(int paymentId);
 
-    IEnumerable<Payment> GetPaymentsForClient(int clientId);
-
     void Update(Payment payment);
 
-    void Remove(Payment payment);
+    IEnumerable<Payment> FindByClientId(int clientId);
 }

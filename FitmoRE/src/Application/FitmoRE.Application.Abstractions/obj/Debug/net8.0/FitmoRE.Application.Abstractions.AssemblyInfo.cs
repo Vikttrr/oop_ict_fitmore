@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitmoRE.Application.Abstractions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9985372c1bace3e3922915dcab4b684bd9428d88")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+785f5f941c19b46841050e61434f92f97b192b22")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitmoRE.Application.Abstractions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitmoRE.Application.Abstractions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

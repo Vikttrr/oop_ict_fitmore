@@ -1,6 +1,6 @@
 namespace FitmoRE.Application.Models.Entities.Repositories;
 
-public interface IGymRoomRepository
+public interface IRoomRepository
 {
     GymRoom GetById(int roomId);
 
@@ -11,6 +11,4 @@ public interface IGymRoomRepository
     void Update(GymRoom gymRoom);
 
     void Delete(int roomId);
-
-    void SaveChanges();
 }
