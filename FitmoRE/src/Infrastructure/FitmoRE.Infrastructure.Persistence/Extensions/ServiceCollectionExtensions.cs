@@ -1,5 +1,3 @@
-namespace FitmoRE.Infrastructure.Persistence.Extensions;
-
 using FitmoRE.Application.Abstractions.Persistence;
 using FitmoRE.Infrastructure.Persistence.Migrations;
 using FitmoRE.Infrastructure.Persistence.Plugins;
@@ -7,6 +5,7 @@ using Itmo.Dev.Platform.Postgres.Extensions;
 using Itmo.Dev.Platform.Postgres.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 
+namespace FitmoRE.Infrastructure.Persistence.Extensions;
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddInfrastructurePersistence(this IServiceCollection collection)

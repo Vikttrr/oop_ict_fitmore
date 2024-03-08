@@ -1,14 +1,14 @@
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
-using FitmoRE.Application.Models.Entities.Repositories;
+using FitmoRE.Application.Repositories;
 
 namespace FitmoRE.Application.Services
 {
     public interface IEmployeeService
     {
-        void AddEmployee(AddEmployeeDto employeeDto);
+        AddEmployeeResponseDto AddEmployee(AddEmployeeDto employeeDto);
 
-        EmployeeInfoResponseDto GetEmployeeInfo(int employeeId);
+        EmployeeInfoResponseDto GetEmployeeInfo(string employeeId);
     }
 
     public class EmployeeService : IEmployeeService
@@ -20,21 +20,27 @@ namespace FitmoRE.Application.Services
             _employeeRepository = employeeRepository;
         }
 
-        public void AddEmployee(AddEmployeeDto employeeDto)
+        public AddEmployeeResponseDto AddEmployee(AddEmployeeDto employeeDto)
         {
             var employee = new Employee(
                 employeeDto.EmployeeId,
                 employeeDto.FullName,
                 employeeDto.PhoneNumber,
                 employeeDto.Email,
-                employeeDto.StartDate,
+                DateTime.Parse(employeeDto.StartDate).ToString(),
                 employeeDto.WorkSchedule,
                 employeeDto.Position,
                 true);
+
             _employeeRepository.Add(employee);
+
+            return new AddEmployeeResponseDto
+            {
+                EmployeeId = employee.EmployeeId,
+            };
         }
 
-        public EmployeeInfoResponseDto GetEmployeeInfo(int employeeId)
+        public EmployeeInfoResponseDto GetEmployeeInfo(string employeeId)
         {
             var employee = _employeeRepository.GetById(employeeId);
             if (employee == null)

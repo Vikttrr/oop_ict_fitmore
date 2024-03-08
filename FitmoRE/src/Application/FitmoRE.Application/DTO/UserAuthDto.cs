@@ -4,5 +4,5 @@ public class UserAuthDto
 {
     public string Phone { get; set; } = string.Empty;
 
-    public int ClientId { get; set; }
+    public string ClientId { get; set; } = string.Empty;
 }

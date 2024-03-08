@@ -1,12 +1,11 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
-using FitmoRE.Application.Models.Entities.Repositories;
+using FitmoRE.Application.Repositories;
 
 namespace FitmoRE.Application.Services
 {
     public interface IRoomService
     {
-        RoomInfoResponseDto GetRoomInfo(int roomId);
+        RoomInfoResponseDto GetRoomInfo(string roomId);
     }
 
     public class RoomService : IRoomService
@@ -18,9 +17,9 @@ namespace FitmoRE.Application.Services
             _roomRepository = roomRepository;
         }
 
-        public RoomInfoResponseDto GetRoomInfo(int roomId)
+        public RoomInfoResponseDto GetRoomInfo(string roomId)
         {
-            var room = _roomRepository.GetById(roomId);
+            var room = _roomRepository.GetById(roomId.ToString());
             if (room == null)
             {
                 throw new InvalidOperationException("Room is not found");
@@ -28,7 +27,7 @@ namespace FitmoRE.Application.Services
 
             return new RoomInfoResponseDto
             {
-                RoomNum = room.RoomNumber,
+                RoomNum = room.RoomNum,
                 Space = room.Space,
                 Temperature = room.Temperature.ToString(),
                 Capacity = room.Capacity,

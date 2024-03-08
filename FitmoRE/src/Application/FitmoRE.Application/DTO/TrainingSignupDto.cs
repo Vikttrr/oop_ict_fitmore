@@ -2,9 +2,9 @@ namespace FitmoRE.Application.DTO;
 
 public class TrainingSignupDto
 {
-    public int TrainingId { get; set; }
+    public string TrainingId { get; set; } = string.Empty;
 
-    public int ClientId { get; set; }
+    public string ClientId { get; set; } = string.Empty;
 
     public string DateTime { get; set; } = string.Empty;
 }

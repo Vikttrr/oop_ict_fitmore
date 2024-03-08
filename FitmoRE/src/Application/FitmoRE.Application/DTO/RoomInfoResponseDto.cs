@@ -10,5 +10,5 @@ public class RoomInfoResponseDto
 
     public int Capacity { get; set; }
 
-    public int BranchId { get; set; }
+    public string BranchId { get; set; } = string.Empty;
 }

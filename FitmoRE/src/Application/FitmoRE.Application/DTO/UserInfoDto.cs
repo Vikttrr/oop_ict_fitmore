@@ -2,5 +2,5 @@ namespace FitmoRE.Application.DTO;
 
 public class UserInfoDto
 {
-    public int ClientId { get; set; }
+    public string ClientId { get; set; } = string.Empty;
 }

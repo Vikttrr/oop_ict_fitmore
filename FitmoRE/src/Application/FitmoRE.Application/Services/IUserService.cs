@@ -1,14 +1,13 @@
-namespace FitmoRE.Application.Services;
-
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
-using FitmoRE.Application.Models.Entities.Repositories;
+using FitmoRE.Application.Repositories;
 
+namespace FitmoRE.Application.Services;
 public interface IUserService
 {
-    void RegisterUser(UserRegistrationDto registrationDto);
+    UserRegistrationResponseDto RegisterUser(UserRegistrationDto registrationDto);
 
-    UserInfoResponseDto GetUserInfo(int clientId);
+    UserInfoResponseDto GetUserInfo(string clientId);
 
     UserAuthResponseDto AuthenticateUser(UserAuthDto authDto);
 }
@@ -22,17 +21,27 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
-    public void RegisterUser(UserRegistrationDto registrationDto)
+    public UserRegistrationResponseDto RegisterUser(UserRegistrationDto registrationDto)
     {
         var client = new Client(
-            0,
+            string.Empty,
             registrationDto.FullName,
-            registrationDto.BirthDate,
+            DateTime.Parse(registrationDto.BirthDate).ToString(),
             registrationDto.Phone,
             registrationDto.Email,
             string.Empty,
             true);
         _userRepository.Add(client);
+
+        return new UserRegistrationResponseDto
+        {
+            UserId = client.ClientId.ToString(),
+        };
+    }
+
+    public UserInfoResponseDto GetUserInfo(string clientId)
+    {
+        throw new NotImplementedException();
     }
 
     public UserInfoResponseDto GetUserInfo(int clientId)
@@ -46,8 +55,8 @@ public class UserService : IUserService
         return new UserInfoResponseDto
         {
             FullName = client.FullName,
-            BirthDate = client.DateOfBirth,
-            Phone = client.PhoneNumber,
+            BirthDate = client.BirthDate,
+            Phone = client.Phone,
             Email = client.Email,
             Address = client.Address,
             SubscriptionType = "basic",
@@ -57,7 +66,7 @@ public class UserService : IUserService
 
     public UserAuthResponseDto AuthenticateUser(UserAuthDto authDto)
     {
-        var client = _userRepository.FindByPhoneAndClientId(authDto.Phone, authDto.ClientId);
+        var client = _userRepository.FindByPhoneAndClientId(authDto);
 
         if (client == null)
         {

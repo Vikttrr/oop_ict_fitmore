@@ -21,17 +21,16 @@ public class PaymentService : IPaymentService
     public SubscriptionPurchaseResponseDto PurchaseSubscription(SubscriptionPurchaseDto purchaseDto)
     {
         var payment = new Payment(
-            0,
+            string.Empty,
             purchaseDto.ClientId,
             DateTime.Parse(purchaseDto.DateTime),
             purchaseDto.Amount,
             true);
 
         _paymentRepository.Add(payment);
-
         return new SubscriptionPurchaseResponseDto
         {
-            PaymentId = payment.PaymentId.ToString(),
+            PaymentId = payment.PaymentId,
             IsPaid = true,
         };
     }

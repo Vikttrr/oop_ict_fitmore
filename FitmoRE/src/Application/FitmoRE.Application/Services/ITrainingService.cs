@@ -1,13 +1,14 @@
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Models.Entities.Repositories;
+using FitmoRE.Application.Repositories;
 
 namespace FitmoRE.Application.Services;
 public interface ITrainingService
 {
-    void AddTraining(AddTrainingDto trainingDto);
+    AddTrainingResponseDto AddTraining(AddTrainingDto trainingDto);
 
-    TrainingInfoResponseDto GetTrainingInfo(int trainingId);
+    TrainingInfoResponseDto GetTrainingInfo(string trainingId);
 
     TrainingSignupResponseDto SignupForTraining(TrainingSignupDto signupDto);
 }
@@ -23,21 +24,25 @@ public class TrainingService : ITrainingService
         _trainingRegistrationRepository = trainingRegistrationRepository;
     }
 
-    public void AddTraining(AddTrainingDto trainingDto)
+    public AddTrainingResponseDto AddTraining(AddTrainingDto trainingDto)
     {
         var trainingSession = new TrainingSession(
-            0,
+            string.Empty,
             trainingDto.RoomId,
             trainingDto.EmployeeId,
-            0,
             trainingDto.ParticipantsNumber,
             trainingDto.StartTime,
             trainingDto.EndTime,
             trainingDto.Description);
         _trainingRepository.Add(trainingSession);
+
+        return new AddTrainingResponseDto
+        {
+            TrainingId = trainingSession.TrainingId.ToString(),
+        };
     }
 
-    public TrainingInfoResponseDto GetTrainingInfo(int trainingId)
+    public TrainingInfoResponseDto GetTrainingInfo(string trainingId)
     {
         var training = _trainingRepository.GetById(trainingId);
         if (training == null)
@@ -49,7 +54,7 @@ public class TrainingService : ITrainingService
         {
             RoomId = training.RoomId,
             EmployeeId = training.EmployeeId,
-            ParticipantsNumber = training.NumberOfParticipants,
+            ParticipantsNumber = training.ParticipantsNumber,
             StartTime = training.StartTime,
             EndTime = training.EndTime,
             Description = training.Description,
@@ -59,7 +64,7 @@ public class TrainingService : ITrainingService
     public TrainingSignupResponseDto SignupForTraining(TrainingSignupDto signupDto)
     {
         var trainingRegistration = new TrainingRegistration(
-            0,
+            string.Empty,
             signupDto.TrainingId,
             signupDto.ClientId,
             DateTime.Parse(signupDto.DateTime),

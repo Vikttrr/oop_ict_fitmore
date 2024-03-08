@@ -2,7 +2,7 @@ namespace FitmoRE.Application.Models.Entities;
 
 public class FitnessService
 {
-    public int ServiceId { get; set; }
+    public string ServiceId { get; set; }
 
     public int RoomId { get; set; }
 
@@ -16,7 +16,7 @@ public class FitnessService
 
     public string Type { get; set; }
 
-    public FitnessService(int serviceId, int roomId, int employeeId, TimeSpan duration, decimal cost, string type, string description)
+    public FitnessService(string serviceId, int roomId, int employeeId, TimeSpan duration, decimal cost, string type, string description)
     {
         ServiceId = serviceId;
         RoomId = roomId;

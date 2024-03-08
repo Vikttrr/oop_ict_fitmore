@@ -2,7 +2,7 @@ namespace FitmoRE.Application.DTO;
 
 public class SubscriptionPurchaseDto
 {
-    public int ClientId { get; set; }
+    public string ClientId { get; set; } = string.Empty;
 
     public string SubscriptionId { get; set; } = string.Empty;
 
