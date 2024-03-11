@@ -22,7 +22,8 @@ builder.Services
     .AddNewtonsoftJson()
     .AddPresentationHttp();
 
-builder.Services.AddSwaggerGen().AddEndpointsApiExplorer();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 builder.Host.AddPlatformSerilog(builder.Configuration);
 builder.Services.AddUtcDateTimeProvider();
