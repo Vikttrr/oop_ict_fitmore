@@ -1,15 +1,14 @@
-namespace FitmoRE.Application.Repositories;
-
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 
+namespace FitmoRE.Application.Repositories;
 public interface ITrainingRegistrationRepository
 {
-    string Add(TrainingRegistration trainingSignupDto);
+    string Add(TrainingRegistration fitnessService);
 
     TrainingSignupDto GetById(string registrationId);
 
-    TrainingSignupResponseDto Update(TrainingSignupDto trainingSignupDto);
+    TrainingSignupResponseDto Update(FitnessService fitnessService);
 
     TrainingSignupDto Delete(string registrationId);
 

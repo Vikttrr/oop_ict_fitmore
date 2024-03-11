@@ -1,17 +1,18 @@
-namespace FitmoRE.Application.Repositories;
-
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 
-public interface ITrainingRepository
+namespace FitmoRE.Application.Models.Entities.Repositories
 {
-    string Add(TrainingSession trainingSession);
+    public interface ITrainingRepository
+    {
+        AddTrainingResponseDto Add(TrainingSession trainingSession);
 
-    TrainingSession GetById(string trainingId);
+        TrainingInfoResponseDto GetById(string trainingId);
 
-    TrainingInfoResponseDto Update(AddTrainingDto addTrainingDto);
+        TrainingInfoResponseDto Update(TrainingSession trainingSession);
 
-    AddTrainingDto Delete(string trainingId);
+        AddTrainingDto Delete(string trainingId);
 
-    IEnumerable<TrainingInfoResponseDto> GetAll();
+        IEnumerable<TrainingInfoResponseDto> GetAll();
+    }
 }
