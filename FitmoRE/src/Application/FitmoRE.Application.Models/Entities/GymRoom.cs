@@ -1,9 +1,9 @@
 namespace FitmoRE.Application.Models.Entities;
 public class GymRoom
 {
-    public int RoomId { get; set; }
+    public string RoomId { get; set; }
 
-    public string RoomNumber { get; set; }
+    public int RoomNumber { get; set; }
 
     public int Space { get; set; }
 
@@ -11,9 +11,9 @@ public class GymRoom
 
     public int Capacity { get; set; }
 
-    public int BranchId { get; set; }
+    public string BranchId { get; set; }
 
-    public GymRoom(int roomId, string roomNumber, int space, double temperature, int capacity, int branchId)
+    public GymRoom(string roomId, int roomNumber, int space, double temperature, int capacity, string branchId)
     {
         RoomId = roomId;
         RoomNumber = roomNumber;

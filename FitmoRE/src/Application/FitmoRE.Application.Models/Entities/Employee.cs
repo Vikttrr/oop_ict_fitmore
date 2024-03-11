@@ -2,7 +2,7 @@ namespace FitmoRE.Application.Models.Entities;
 
 public class Employee
 {
-    public int EmployeeId { get; set; }
+    public string EmployeeId { get; set; } = string.Empty;
 
     public string FullName { get; set; }
 
@@ -10,7 +10,7 @@ public class Employee
 
     public string Email { get; set; }
 
-    public DateTime StartDate { get; set; }
+    public string StartDate { get; set; }
 
     public string WorkSchedule { get; set; }
 
@@ -18,9 +18,8 @@ public class Employee
 
     public bool IsActive { get; set; }
 
-    public Employee(int id, string fullName, string phoneNumber, string email, DateTime startDate, string workSchedule, string position, bool isActive)
+    public Employee(string fullName, string phoneNumber, string email, string startDate, string workSchedule, string position, bool isActive)
     {
-        EmployeeId = id;
         FullName = fullName;
         PhoneNumber = phoneNumber;
         Email = email;
