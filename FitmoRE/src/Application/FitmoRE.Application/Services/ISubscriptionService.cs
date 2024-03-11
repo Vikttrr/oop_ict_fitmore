@@ -7,7 +7,7 @@ public interface ISubscriptionService
 {
     AddSubscriptionResponseDto AddSubscription(AddSubscriptionDto subscriptionDto);
 
-    SubscriptionDto GetSubscriptionById(string subscriptionId);
+    SubscriptionInfoResponseDto GetSubscriptionById(string subscriptionId);
 }
 
 public class SubscriptionService : ISubscriptionService

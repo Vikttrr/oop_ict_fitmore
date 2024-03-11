@@ -1,6 +1,6 @@
 namespace FitmoRE.Application.DTO;
 
-public class SubscriptionDto
+public class SubscriptionInfoResponseDto
 {
     public string SubscriptionId { get; set; } = string.Empty;
 
