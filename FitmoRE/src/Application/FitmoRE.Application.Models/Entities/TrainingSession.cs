@@ -2,7 +2,7 @@ namespace FitmoRE.Application.Models.Entities;
 
 public class TrainingSession
 {
-    public int TrainingId { get; set; }
+    public string TrainingId { get; set; }
 
     public string RoomId { get; set; }
 
@@ -18,6 +18,7 @@ public class TrainingSession
 
     public TrainingSession(string trainingId, string roomId, string employeeId, int numberOfParticipants, DateTime startTime, DateTime endTime, string description)
     {
+        TrainingId = trainingId;
         EmployeeId = employeeId;
         RoomId = roomId;
         NumberOfParticipants = numberOfParticipants;

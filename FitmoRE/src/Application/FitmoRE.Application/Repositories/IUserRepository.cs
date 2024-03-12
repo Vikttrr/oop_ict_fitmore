@@ -6,7 +6,7 @@ public interface IUserRepository
 {
     string Add(Client client);
 
-    Client GetById(int clientId);
+    Client GetById(string clientId);
 
     Client FindByPhoneAndClientId(string id, string phone);
 

@@ -4,9 +4,9 @@ public class FitnessService
 {
     public string ServiceId { get; set; }
 
-    public int RoomId { get; set; }
+    public string RoomId { get; set; }
 
-    public int EmployeeId { get; set; }
+    public string EmployeeId { get; set; }
 
     public TimeSpan Duration { get; set; }
 
@@ -16,7 +16,7 @@ public class FitnessService
 
     public string Type { get; set; }
 
-    public FitnessService(string serviceId, int roomId, int employeeId, TimeSpan duration, decimal cost, string type, string description)
+    public FitnessService(string serviceId, string roomId, string employeeId, TimeSpan duration, decimal cost, string type, string description)
     {
         ServiceId = serviceId;
         RoomId = roomId;
