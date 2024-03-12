@@ -8,16 +8,20 @@ public class Subscription
 
     public string StartDate { get; set; }
 
-    public string Duration { get; set; }
+    // public string Duration { get; set; }
+    public Tariff Tariff { get; set; }
+
+    public string ClientId { get; set; }
 
     public bool IsActive { get; set; }
 
-    public Subscription(string subscriptionId, decimal price, string startDate, string duration, bool isActive)
+    public Subscription(string subscriptionId, decimal price, string startDate, Tariff tariff, string clientId, bool isActive)
     {
         SubscriptionId = subscriptionId;
         Price = price;
         StartDate = startDate;
-        Duration = duration;
+        Tariff = tariff;
+        ClientId = clientId;
         IsActive = isActive;
     }
 }

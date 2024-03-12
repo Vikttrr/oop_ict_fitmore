@@ -1,9 +1,8 @@
-﻿namespace FitmoRE.Presentation.Http.Controllers;
-
-using FitmoRE.Application.DTO;
+﻿using FitmoRE.Application.DTO;
 using FitmoRE.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
+namespace FitmoRE.Presentation.Http.Controllers;
 [ApiController]
 [Route("[controller]")]
 public class TrainingController : ControllerBase
@@ -20,7 +19,11 @@ public class TrainingController : ControllerBase
     {
         var result = _trainingService.GetTrainingInfo(trainingInfoDto.TrainingId);
 
-        // if (result.RoomId == 0)
+        if (string.IsNullOrEmpty(result.EmployeeId))
+        {
+            return NotFound();
+        }
+
         return Ok(result);
     }
 

@@ -1,9 +1,8 @@
-namespace FitmoRE.Application.Services;
-
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Repositories;
 
+namespace FitmoRE.Application.Services;
 public interface IEmployeeService
 {
     AddEmployeeResponseDto AddEmployee(AddEmployeeDto employeeDto);
@@ -44,7 +43,11 @@ public class EmployeeService : IEmployeeService
         var employee = _employeeRepository.GetById(employeeId);
         if (employee == null)
         {
-            throw new InvalidOperationException("Employee is not found");
+            // throw new InvalidOperationException("Employee is not found");
+            return new EmployeeInfoResponseDto()
+            {
+                FullName = string.Empty,
+            };
         }
 
         return new EmployeeInfoResponseDto

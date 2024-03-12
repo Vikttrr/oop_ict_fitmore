@@ -6,6 +6,11 @@ public class Tariff
 
     public TariffType Type { get; set; }
 
+    public Tariff()
+    {
+        // Empty constructor
+    }
+
     public Tariff(TariffCategory category, TariffType type)
     {
         Category = category;

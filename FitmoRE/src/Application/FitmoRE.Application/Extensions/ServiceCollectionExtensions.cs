@@ -1,8 +1,7 @@
-namespace FitmoRE.Application.Extensions;
-
 using FitmoRE.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 
+namespace FitmoRE.Application.Extensions;
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddApplication(this IServiceCollection collection)

@@ -1,9 +1,8 @@
-﻿namespace FitmoRE.Presentation.Http.Controllers;
-
-using FitmoRE.Application.DTO;
+﻿using FitmoRE.Application.DTO;
 using FitmoRE.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
+namespace FitmoRE.Presentation.Http.Controllers;
 [ApiController]
 [Route("[controller]")]
 public class RoomController : ControllerBase
@@ -19,6 +18,11 @@ public class RoomController : ControllerBase
     public ActionResult<RoomInfoResponseDto> Get(RoomInfoDto roomInfoDto)
     {
         var result = _gymRoomService.GetRoomInfo(roomInfoDto);
+
+        if (string.IsNullOrEmpty(result.BranchId))
+        {
+            return NotFound();
+        }
 
         return Ok(result);
     }

@@ -1,8 +1,7 @@
-namespace FitmoRE.Application.Repositories;
-
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 
+namespace FitmoRE.Application.Repositories;
 public interface IUserRepository
 {
     string Add(Client client);

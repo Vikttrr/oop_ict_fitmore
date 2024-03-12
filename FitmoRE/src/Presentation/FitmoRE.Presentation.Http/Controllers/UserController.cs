@@ -1,10 +1,9 @@
-﻿namespace FitmoRE.Presentation.Http.Controllers;
-
-using System.Collections.Generic;
-using FitmoRE.Application.DTO;
+﻿using FitmoRE.Application.DTO;
 using FitmoRE.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
+// using System.Collections.Generic;
+namespace FitmoRE.Presentation.Http.Controllers;
 [ApiController]
 [Route("[controller]")]
 public class UserController : ControllerBase

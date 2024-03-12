@@ -1,9 +1,8 @@
-namespace FitmoRE.Application.Services;
-
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Repositories;
 
+namespace FitmoRE.Application.Services;
 public interface IPaymentService
 {
     SubscriptionPurchaseResponseDto PurchaseSubscription(SubscriptionPurchaseDto purchaseDto);

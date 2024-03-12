@@ -1,9 +1,8 @@
-namespace FitmoRE.Application.Services;
-
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Repositories;
 
+namespace FitmoRE.Application.Services;
 public interface IUserService
 {
     UserRegistrationResponseDto RegisterUser(UserRegistrationDto registrationDto);
@@ -45,7 +44,11 @@ public class UserService : IUserService
         var client = _userRepository.GetById(clientId);
         if (client == null)
         {
-            throw new InvalidOperationException("User is not found");
+            // throw new InvalidOperationException("User is not found");
+            return new UserInfoResponseDto()
+            {
+                FullName = string.Empty,
+            };
         }
 
         return new UserInfoResponseDto
@@ -55,7 +58,8 @@ public class UserService : IUserService
             Phone = client.PhoneNumber,
             Email = client.Email,
             Address = client.Address,
-            SubscriptionType = "basic",
+
+            // SubscriptionType = "basic",
             IsActive = client.IsActive,
         };
     }

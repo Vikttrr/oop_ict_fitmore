@@ -1,8 +1,7 @@
-namespace FitmoRE.Application.Services;
-
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Repositories;
 
+namespace FitmoRE.Application.Services;
 public interface IRoomService
 {
     RoomInfoResponseDto GetRoomInfo(RoomInfoDto roomId);
@@ -22,7 +21,11 @@ public class RoomService : IRoomService
         var room = _roomRepository.GetById(roomId.RoomId);
         if (room == null)
         {
-            throw new InvalidOperationException("Room is not found");
+            // throw new InvalidOperationException("Room is not found");
+            return new RoomInfoResponseDto()
+            {
+                BranchId = string.Empty,
+            };
         }
 
         return new RoomInfoResponseDto
