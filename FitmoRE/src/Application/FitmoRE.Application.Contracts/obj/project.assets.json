@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Itmo.Dev.Editorconfig/1.0.2": {
+      "Itmo.Dev.Editorconfig/1.0.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Itmo.Dev.Editorconfig.dll": {}
@@ -56,7 +56,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "Itmo.Dev.Editorconfig": "1.0.2",
+          "Itmo.Dev.Editorconfig": "1.0.1",
           "System.Linq.Async": "6.0.1"
         },
         "compile": {
@@ -69,16 +69,16 @@
     }
   },
   "libraries": {
-    "Itmo.Dev.Editorconfig/1.0.2": {
-      "sha512": "7g6+wR4iQlRB9b85zclZtsJQRbK6R3RyYTOprALt+xyj7FNvqnpVY3ErJ0wKyQEuer8FA/TFWx42DfmbHtNbrw==",
+    "Itmo.Dev.Editorconfig/1.0.1": {
+      "sha512": "FqmuPkrWQvTmJsGTaG5kgGGPo/trx2/imAiSjkNR+AmBzGp632UHEv2SysTQF5HfyLDSlZQ6Nk1am/S3p6BIuw==",
       "type": "package",
-      "path": "itmo.dev.editorconfig/1.0.2",
+      "path": "itmo.dev.editorconfig/1.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/Itmo.Dev.Editorconfig.props",
         "content/Rules/.editorconfig",
-        "itmo.dev.editorconfig.1.0.2.nupkg.sha512",
+        "itmo.dev.editorconfig.1.0.1.nupkg.sha512",
         "itmo.dev.editorconfig.nuspec",
         "lib/netstandard2.0/Itmo.Dev.Editorconfig.dll"
       ]
@@ -180,47 +180,39 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "FitmoRE.Application.Models >= 1.0.0",
-      "Itmo.Dev.Editorconfig >= 1.0.2",
+      "Itmo.Dev.Editorconfig >= 1.0.1",
       "StyleCop.Analyzers >= 1.2.0-beta.435",
       "System.Linq.Async >= 6.0.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dasha\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/viktorianakonecnaa/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dasha\\RiderProjects\\oop_ict_fitmore\\FitmoRE\\src\\Application\\FitmoRE.Application.Contracts\\FitmoRE.Application.Contracts.csproj",
+      "projectUniqueName": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj",
       "projectName": "FitmoRE.Application.Contracts",
-      "projectPath": "C:\\Users\\dasha\\RiderProjects\\oop_ict_fitmore\\FitmoRE\\src\\Application\\FitmoRE.Application.Contracts\\FitmoRE.Application.Contracts.csproj",
-      "packagesPath": "C:\\Users\\dasha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dasha\\RiderProjects\\oop_ict_fitmore\\FitmoRE\\src\\Application\\FitmoRE.Application.Contracts\\obj\\",
+      "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/FitmoRE.Application.Contracts.csproj",
+      "packagesPath": "/Users/viktorianakonecnaa/.nuget/packages/",
+      "outputPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Contracts/obj/",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\dasha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/viktorianakonecnaa/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\dasha\\RiderProjects\\oop_ict_fitmore\\FitmoRE\\src\\Application\\FitmoRE.Application.Models\\FitmoRE.Application.Models.csproj": {
-              "projectPath": "C:\\Users\\dasha\\RiderProjects\\oop_ict_fitmore\\FitmoRE\\src\\Application\\FitmoRE.Application.Models\\FitmoRE.Application.Models.csproj"
+            "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj": {
+              "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Models/FitmoRE.Application.Models.csproj"
             }
           }
         }
@@ -230,11 +222,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -243,7 +230,7 @@
         "dependencies": {
           "Itmo.Dev.Editorconfig": {
             "target": "Package",
-            "version": "[1.0.2, )",
+            "version": "[1.0.1, )",
             "versionCentrallyManaged": true
           },
           "StyleCop.Analyzers": {
@@ -260,12 +247,18 @@
           }
         },
         "centralPackageVersions": {
-          "Itmo.Dev.Editorconfig": "[1.0.2, )",
-          "Itmo.Dev.Platform.Logging": "[1.0.89, )",
-          "Itmo.Dev.Platform.Postgres": "[1.1.89, )",
+          "EntityFramework": "[6.4.4, )",
+          "Itmo.Dev.Editorconfig": "[1.0.1, )",
+          "Itmo.Dev.Platform.Common": "[1.1.82, )",
+          "Itmo.Dev.Platform.Logging": "[1.0.82, )",
+          "Itmo.Dev.Platform.Postgres": "[1.1.82, )",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "[7.0.15, )",
+          "Microsoft.EntityFrameworkCore": "[7.0.10, )",
+          "Microsoft.EntityFrameworkCore.Design": "[7.0.10, )",
+          "Microsoft.EntityFrameworkCore.Tools": "[7.0.10, )",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[8.0.0, )",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "[8.0.0, )",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "[7.0.4, )",
           "SourceKit.Generators.Builder": "[1.1.24, )",
           "StyleCop.Analyzers": "[1.2.0-beta.435, )",
           "Swashbuckle.AspNetCore": "[6.5.0, )",
@@ -287,7 +280,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/viktorianakonecnaa/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

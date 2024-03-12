@@ -2,11 +2,20 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Application\FitmoRE.Application.Abstractions\FitmoRE.Application.Abstractions.csproj"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Itmo.Dev.Platform.Postgres"/>
         <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Repositories\EmployeeRepository.cs" />
+      <Compile Remove="Repositories\PaymentRepository.cs" />
     </ItemGroup>
 
 </Project>

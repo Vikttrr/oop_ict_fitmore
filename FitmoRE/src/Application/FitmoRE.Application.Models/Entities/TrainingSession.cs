@@ -1,3 +1,4 @@
+namespace FitmoRE.Application.Models.Entities;
 public class TrainingSession
 {
     public int TrainingId { get; set; }

@@ -1,6 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <ItemGroup>
+        <!-- Другие элементы ItemGroup, если они есть -->
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions"  />
+        <PackageReference Include="Itmo.Dev.Platform.Postgres"  />
+        <PackageReference Include="Itmo.Dev.Platform.Common"/>
+    </ItemGroup>
+    
+    <ItemGroup>
         <ProjectReference Include="..\FitmoRE.Application.Models\FitmoRE.Application.Models.csproj"/>
     </ItemGroup>
 
