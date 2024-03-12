@@ -8,9 +8,9 @@ public interface IEmployeeRepository
 
     Employee GetById(string id);
 
-    EmployeeInfoResponseDto Update(AddEmployeeDto employeeDto);
+    EmployeeInfoResponseDto Update(Employee employee);
 
-    EmployeeInfoDto Delete(EmployeeInfoDto employeeInfoDto);
+    EmployeeInfoDto Delete(string employeeId);
 
     IEnumerable<EmployeeInfoResponseDto> GetAll();
 }

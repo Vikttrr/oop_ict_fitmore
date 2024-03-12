@@ -8,7 +8,7 @@ public interface ISubscriptionRepository
 
     Subscription GetById(string subscriptionId);
 
-    Subscription Update(AddSubscriptionDto subscriptionDto);
+    Subscription Update(Subscription subscription);
 
     Subscription Delete(string subscriptionId);
 

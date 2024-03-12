@@ -1,16 +1,18 @@
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 
-namespace FitmoRE.Application.Repositories;
-public interface IRoomRepository
+namespace FitmoRE.Application.Repositories
 {
-    GymRoom GetById(string roomId);
+    public interface IRoomRepository
+    {
+        RoomInfoResponseDto GetById(string roomId);
 
-    IEnumerable<RoomInfoResponseDto> GetAll();
+        IEnumerable<RoomInfoResponseDto> GetAll();
 
-    RoomInfoResponseDto Add(RoomInfoDto gymRoomDto);
+        RoomInfoResponseDto Add(GymRoom room);
 
-    RoomInfoResponseDto Update(RoomInfoDto gymRoomDto);
+        RoomInfoResponseDto Update(GymRoom room);
 
-    RoomInfoDto Delete(string roomId);
+        RoomInfoDto Delete(string roomId);
+    }
 }

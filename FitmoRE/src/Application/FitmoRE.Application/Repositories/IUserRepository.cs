@@ -6,11 +6,11 @@ public interface IUserRepository
 {
     string Add(Client client);
 
-    Client GetById(string clientId);
+    Client GetById(int clientId);
 
     Client FindByPhoneAndClientId(string id, string phone);
 
-    UserInfoResponseDto Update(UserInfoDto userInfoDto);
+    UserInfoResponseDto Update(Client client);
 
     UserInfoDto Delete(int clientId);
 

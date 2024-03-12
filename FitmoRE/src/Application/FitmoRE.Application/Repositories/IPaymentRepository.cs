@@ -8,7 +8,7 @@ public interface IPaymentRepository
 
     Subscription GetById(string paymentId);
 
-    SubscriptionPurchaseResponseDto Update(SubscriptionPurchaseDto paymentDto);
+    SubscriptionPurchaseResponseDto Update(Payment payment);
 
     IEnumerable<SubscriptionPurchaseResponseDto> FindByClientId(string clientId);
 }
