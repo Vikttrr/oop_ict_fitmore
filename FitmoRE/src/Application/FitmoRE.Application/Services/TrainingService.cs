@@ -1,17 +1,9 @@
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Repositories;
+using FitmoRE.Application.Services.Interfaces;
 
 namespace FitmoRE.Application.Services;
-public interface ITrainingService
-{
-    AddTrainingResponseDto AddTraining(AddTrainingDto trainingDto);
-
-    TrainingInfoResponseDto GetTrainingInfo(string trainingId);
-
-    TrainingSignupResponseDto SignupForTraining(TrainingSignupDto signupDto);
-}
-
 public class TrainingService : ITrainingService
 {
     private readonly ITrainingRepository _trainingRepository;
@@ -33,7 +25,7 @@ public class TrainingService : ITrainingService
             trainingDto.StartTime,
             trainingDto.EndTime,
             trainingDto.Description);
-        var id = _trainingRepository.Add(trainingSession);
+        string id = _trainingRepository.Add(trainingSession);
 
         return new AddTrainingResponseDto
         {
@@ -43,7 +35,7 @@ public class TrainingService : ITrainingService
 
     public TrainingInfoResponseDto GetTrainingInfo(string trainingId)
     {
-        var training = _trainingRepository.GetById(trainingId);
+        TrainingSession training = _trainingRepository.GetById(trainingId);
         if (training == null)
         {
             // throw new InvalidOperationException("Training session is not found");

@@ -1,7 +1,6 @@
 using FitmoRE.Application.Models.Entities;
 
 namespace FitmoRE.Application.DTO;
-
 public class SubscriptionInfoResponseDto
 {
     public string SubscriptionId { get; set; } = string.Empty;

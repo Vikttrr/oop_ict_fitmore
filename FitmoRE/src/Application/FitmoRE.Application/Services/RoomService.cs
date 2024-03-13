@@ -1,12 +1,8 @@
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Repositories;
+using FitmoRE.Application.Services.Interfaces;
 
 namespace FitmoRE.Application.Services;
-public interface IRoomService
-{
-    RoomInfoResponseDto GetRoomInfo(RoomInfoDto roomId);
-}
-
 public class RoomService : IRoomService
 {
     private readonly IRoomRepository _roomRepository;
@@ -18,7 +14,7 @@ public class RoomService : IRoomService
 
     public RoomInfoResponseDto GetRoomInfo(RoomInfoDto roomId)
     {
-        var room = _roomRepository.GetById(roomId.RoomId);
+        Models.Entities.GymRoom room = _roomRepository.GetById(roomId.RoomId);
         if (room == null)
         {
             // throw new InvalidOperationException("Room is not found");

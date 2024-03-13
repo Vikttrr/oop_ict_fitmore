@@ -1,5 +1,5 @@
 ﻿using FitmoRE.Application.DTO;
-using FitmoRE.Application.Services;
+using FitmoRE.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitmoRE.Presentation.Http.Controllers;
@@ -17,7 +17,7 @@ public class RoomController : ControllerBase
     [HttpGet("{roomInfoDto}")]
     public ActionResult<RoomInfoResponseDto> Get(RoomInfoDto roomInfoDto)
     {
-        var result = _gymRoomService.GetRoomInfo(roomInfoDto);
+        RoomInfoResponseDto result = _gymRoomService.GetRoomInfo(roomInfoDto);
 
         if (string.IsNullOrEmpty(result.BranchId))
         {

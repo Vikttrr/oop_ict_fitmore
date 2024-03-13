@@ -1,13 +1,9 @@
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Repositories;
+using FitmoRE.Application.Services.Interfaces;
 
 namespace FitmoRE.Application.Services;
-public interface IPaymentService
-{
-    SubscriptionPurchaseResponseDto PurchaseSubscription(SubscriptionPurchaseDto purchaseDto);
-}
-
 public class PaymentService : IPaymentService
 {
     private readonly IPaymentRepository _paymentRepository;
@@ -26,7 +22,7 @@ public class PaymentService : IPaymentService
             purchaseDto.Amount,
             true);
 
-        var id = _paymentRepository.Add(payment);
+        string id = _paymentRepository.Add(payment);
         return new SubscriptionPurchaseResponseDto
         {
             PaymentId = id,

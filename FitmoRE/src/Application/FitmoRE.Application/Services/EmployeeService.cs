@@ -1,15 +1,9 @@
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Repositories;
+using FitmoRE.Application.Services.Interfaces;
 
 namespace FitmoRE.Application.Services;
-public interface IEmployeeService
-{
-    AddEmployeeResponseDto AddEmployee(AddEmployeeDto employeeDto);
-
-    EmployeeInfoResponseDto GetEmployeeInfo(string employeeId);
-}
-
 public class EmployeeService : IEmployeeService
 {
     private readonly IEmployeeRepository _employeeRepository;
@@ -30,7 +24,7 @@ public class EmployeeService : IEmployeeService
             employeeDto.Position,
             true);
 
-        var id = _employeeRepository.Add(employee);
+        string id = _employeeRepository.Add(employee);
 
         return new AddEmployeeResponseDto
         {
@@ -40,7 +34,7 @@ public class EmployeeService : IEmployeeService
 
     public EmployeeInfoResponseDto GetEmployeeInfo(string employeeId)
     {
-        var employee = _employeeRepository.GetById(employeeId);
+        Employee employee = _employeeRepository.GetById(employeeId);
         if (employee == null)
         {
             // throw new InvalidOperationException("Employee is not found");

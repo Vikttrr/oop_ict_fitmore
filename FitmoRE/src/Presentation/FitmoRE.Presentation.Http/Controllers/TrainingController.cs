@@ -1,5 +1,5 @@
 ﻿using FitmoRE.Application.DTO;
-using FitmoRE.Application.Services;
+using FitmoRE.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitmoRE.Presentation.Http.Controllers;
@@ -17,7 +17,7 @@ public class TrainingController : ControllerBase
     [HttpGet("{trainingInfoDto}")]
     public ActionResult<TrainingInfoResponseDto> GetTraining(TrainingInfoDto trainingInfoDto)
     {
-        var result = _trainingService.GetTrainingInfo(trainingInfoDto.TrainingId);
+        TrainingInfoResponseDto result = _trainingService.GetTrainingInfo(trainingInfoDto.TrainingId);
 
         if (string.IsNullOrEmpty(result.EmployeeId))
         {
@@ -30,14 +30,14 @@ public class TrainingController : ControllerBase
     [HttpPost("signupForTraining")]
     public ActionResult<bool> SignUp(TrainingSignupDto signupForTrainingDto)
     {
-        var result = _trainingService.SignupForTraining(signupForTrainingDto);
+        TrainingSignupResponseDto result = _trainingService.SignupForTraining(signupForTrainingDto);
         return Ok(result);
     }
 
     [HttpPost("addTraining")]
     public ActionResult<AddTrainingResponseDto> AddTraining(AddTrainingDto addTrainingDto)
     {
-        var result = _trainingService.AddTraining(addTrainingDto);
+        AddTrainingResponseDto result = _trainingService.AddTraining(addTrainingDto);
         return Ok(result);
     }
 }

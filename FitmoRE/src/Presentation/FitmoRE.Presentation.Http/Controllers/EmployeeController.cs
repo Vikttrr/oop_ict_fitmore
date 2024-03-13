@@ -1,8 +1,9 @@
-﻿using FitmoRE.Application.DTO;
-using FitmoRE.Application.Services;
+﻿// using System.Collections.Generic;
+
+using FitmoRE.Application.DTO;
+using FitmoRE.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-// using System.Collections.Generic;
 namespace FitmoRE.Presentation.Http.Controllers;
 [ApiController]
 [Route("[controller]")]
@@ -18,7 +19,7 @@ public class EmployeeController : ControllerBase
     [HttpGet("{employeeId}")]
     public ActionResult<EmployeeInfoResponseDto> GetEmployeeInfo(string employeeId)
     {
-        var result = _employeeService.GetEmployeeInfo(employeeId);
+        EmployeeInfoResponseDto result = _employeeService.GetEmployeeInfo(employeeId);
         if (string.IsNullOrEmpty(result.FullName))
         {
             return NotFound();
@@ -30,7 +31,7 @@ public class EmployeeController : ControllerBase
     [HttpPost("add")]
     public ActionResult<AddEmployeeResponseDto> Add(AddEmployeeDto addEmployeeDto)
     {
-        var result = _employeeService.AddEmployee(addEmployeeDto);
+        AddEmployeeResponseDto result = _employeeService.AddEmployee(addEmployeeDto);
         return Ok(result);
     }
 }

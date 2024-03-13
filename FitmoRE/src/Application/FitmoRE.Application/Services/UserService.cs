@@ -1,17 +1,9 @@
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Repositories;
+using FitmoRE.Application.Services.Interfaces;
 
 namespace FitmoRE.Application.Services;
-public interface IUserService
-{
-    UserRegistrationResponseDto RegisterUser(UserRegistrationDto registrationDto);
-
-    UserInfoResponseDto GetUserInfo(string clientId);
-
-    UserAuthResponseDto AuthenticateUser(UserAuthDto authDto);
-}
-
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
@@ -31,7 +23,7 @@ public class UserService : IUserService
             registrationDto.Email,
             string.Empty,
             true);
-        var id = _userRepository.Add(client);
+        string id = _userRepository.Add(client);
 
         return new UserRegistrationResponseDto
         {
@@ -41,7 +33,7 @@ public class UserService : IUserService
 
     public UserInfoResponseDto GetUserInfo(string clientId)
     {
-        var client = _userRepository.GetById(clientId);
+        Client client = _userRepository.GetById(clientId);
         if (client == null)
         {
             // throw new InvalidOperationException("User is not found");
@@ -66,7 +58,7 @@ public class UserService : IUserService
 
     public UserAuthResponseDto AuthenticateUser(UserAuthDto authDto)
     {
-        var client = _userRepository.FindByPhoneAndClientId(authDto.ClientId, authDto.Phone);
+        Client client = _userRepository.FindByPhoneAndClientId(authDto.ClientId, authDto.Phone);
 
         if (client == null)
         {

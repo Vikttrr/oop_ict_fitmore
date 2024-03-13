@@ -8,4 +8,12 @@
         <Folder Include="Controllers\"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Application\FitmoRE.Application\FitmoRE.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    </ItemGroup>
+
 </Project>

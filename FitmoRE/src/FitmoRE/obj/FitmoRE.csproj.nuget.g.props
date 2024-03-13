@@ -7,7 +7,7 @@
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/viktorianakonecnaa/.nuget/packages/</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/viktorianakonecnaa/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.8.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.9.1</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/Users/viktorianakonecnaa/.nuget/packages/" />
@@ -15,11 +15,13 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.apidescription.server/6.0.5/build/Microsoft.Extensions.ApiDescription.Server.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.apidescription.server/6.0.5/build/Microsoft.Extensions.ApiDescription.Server.props')" />
     <Import Project="$(NuGetPackageRoot)swashbuckle.aspnetcore/6.5.0/build/Swashbuckle.AspNetCore.props" Condition="Exists('$(NuGetPackageRoot)swashbuckle.aspnetcore/6.5.0/build/Swashbuckle.AspNetCore.props')" />
-    <Import Project="$(NuGetPackageRoot)itmo.dev.editorconfig/1.0.2/build/Itmo.Dev.Editorconfig.props" Condition="Exists('$(NuGetPackageRoot)itmo.dev.editorconfig/1.0.2/build/Itmo.Dev.Editorconfig.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore/7.0.10/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore/7.0.10/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props')" />
+    <Import Project="$(NuGetPackageRoot)itmo.dev.editorconfig/1.0.1/build/Itmo.Dev.Editorconfig.props" Condition="Exists('$(NuGetPackageRoot)itmo.dev.editorconfig/1.0.1/build/Itmo.Dev.Editorconfig.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">/Users/viktorianakonecnaa/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5</PkgMicrosoft_Extensions_ApiDescription_Server>
     <PkgStyleCop_Analyzers_Unstable Condition=" '$(PkgStyleCop_Analyzers_Unstable)' == '' ">/Users/viktorianakonecnaa/.nuget/packages/stylecop.analyzers.unstable/1.2.0.435</PkgStyleCop_Analyzers_Unstable>
-    <PkgSentry Condition=" '$(PkgSentry)' == '' ">/Users/viktorianakonecnaa/.nuget/packages/sentry/3.41.4</PkgSentry>
+    <PkgSentry Condition=" '$(PkgSentry)' == '' ">/Users/viktorianakonecnaa/.nuget/packages/sentry/3.35.1</PkgSentry>
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">/Users/viktorianakonecnaa/.nuget/packages/microsoft.entityframeworkcore.tools/7.0.10</PkgMicrosoft_EntityFrameworkCore_Tools>
   </PropertyGroup>
 </Project>

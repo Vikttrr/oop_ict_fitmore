@@ -1,4 +1,5 @@
 using FitmoRE.Application.Services;
+using FitmoRE.Application.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FitmoRE.Application.Extensions;

@@ -1,8 +1,9 @@
-﻿using FitmoRE.Application.DTO;
-using FitmoRE.Application.Services;
+﻿// using System.Collections.Generic;
+
+using FitmoRE.Application.DTO;
+using FitmoRE.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-// using System.Collections.Generic;
 namespace FitmoRE.Presentation.Http.Controllers;
 [ApiController]
 [Route("[controller]")]
@@ -18,7 +19,7 @@ public class PaymentController : ControllerBase
     [HttpPost("add")]
     public ActionResult<SubscriptionPurchaseResponseDto> Purchase(SubscriptionPurchaseDto subscriptionPurchaseDto)
     {
-        var result = _paymentService.PurchaseSubscription(subscriptionPurchaseDto);
+        SubscriptionPurchaseResponseDto result = _paymentService.PurchaseSubscription(subscriptionPurchaseDto);
         return Ok(result);
     }
 }

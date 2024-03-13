@@ -10,7 +10,7 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyMetadata("Sentry.ProjectDirectory", "/Users/viktorianakonecnaa/proga/FitmoRE/src/FitmoRE/")]
+[assembly: System.Reflection.AssemblyMetadata("Sentry.ProjectDirectory", "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/FitmoRE/")]
 
 // Создано классом WriteCodeFragment MSBuild.
 

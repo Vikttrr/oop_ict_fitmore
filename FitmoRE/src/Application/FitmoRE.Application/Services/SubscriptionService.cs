@@ -1,15 +1,9 @@
 using FitmoRE.Application.DTO;
 using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Repositories;
+using FitmoRE.Application.Services.Interfaces;
 
 namespace FitmoRE.Application.Services;
-public interface ISubscriptionService
-{
-    AddSubscriptionResponseDto AddSubscription(AddSubscriptionDto subscriptionDto);
-
-    SubscriptionInfoResponseDto GetSubscriptionById(string subscriptionId);
-}
-
 public class SubscriptionService : ISubscriptionService
 {
     private readonly ISubscriptionRepository _subscriptionRepository;
@@ -28,7 +22,7 @@ public class SubscriptionService : ISubscriptionService
             subscriptionDto.Tariff,
             subscriptionDto.UserId,
             subscriptionDto.IsActive);
-        var id = _subscriptionRepository.Add(subscription);
+        string id = _subscriptionRepository.Add(subscription);
 
         return new AddSubscriptionResponseDto
         {
@@ -38,7 +32,7 @@ public class SubscriptionService : ISubscriptionService
 
     public SubscriptionInfoResponseDto GetSubscriptionById(string subscriptionId)
     {
-        var subscription = _subscriptionRepository.GetById(subscriptionId);
+        Subscription subscription = _subscriptionRepository.GetById(subscriptionId);
         if (subscription == null)
         {
             // throw new InvalidOperationException("Subscription not found.");
