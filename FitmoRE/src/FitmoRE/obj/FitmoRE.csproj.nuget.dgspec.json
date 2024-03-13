@@ -577,6 +577,9 @@
             "projectReferences": {
               "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj": {
                 "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application.Abstractions/FitmoRE.Application.Abstractions.csproj"
+              },
+              "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj": {
+                "projectPath": "/Users/viktorianakonecnaa/Documents/GitHub/oop_ict_fitmore/FitmoRE/src/Application/FitmoRE.Application/FitmoRE.Application.csproj"
               }
             }
           }

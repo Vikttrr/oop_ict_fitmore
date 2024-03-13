@@ -11,6 +11,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+        <ProjectReference Include="..\..\Application\FitmoRE.Application\FitmoRE.Application.csproj" />
     </ItemGroup>
 
 </Project>

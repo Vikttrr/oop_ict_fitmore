@@ -2041,6 +2041,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "FitmoRE.Application": "1.0.0",
           "FitmoRE.Application.Abstractions": "1.0.0",
           "Itmo.Dev.Editorconfig": "1.0.1",
           "Itmo.Dev.Platform.Postgres": "1.1.82",
