@@ -38,7 +38,7 @@ public partial class MyDbContext : DbContext
 
     public virtual DbSet<TrainingSession>? TrainingSessions { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=FitmoRE 5.0;Username=postgres;Password=newpass");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=FitmoRE 5.0;Username=;Password=");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
