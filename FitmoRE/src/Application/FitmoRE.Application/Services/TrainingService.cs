@@ -35,7 +35,7 @@ public class TrainingService : ITrainingService
 
     public TrainingInfoResponseDto GetTrainingInfo(string trainingId)
     {
-        TrainingSession training = _trainingRepository.GetById(trainingId);
+        TrainingSession? training = _trainingRepository.GetById(trainingId);
         if (training == null)
         {
             // throw new InvalidOperationException("Training session is not found");
@@ -62,7 +62,7 @@ public class TrainingService : ITrainingService
             string.Empty,
             signupDto.TrainingId,
             signupDto.ClientId,
-            DateTime.Parse(signupDto.DateTime),
+            signupDto.DateTime,
             true);
         _trainingRegistrationRepository.Add(trainingRegistration);
 

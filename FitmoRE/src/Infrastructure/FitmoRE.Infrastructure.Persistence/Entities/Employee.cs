@@ -10,9 +10,9 @@ public partial class Employee
 
     public string? Email { get; set; }
 
-    public DateOnly? Startdate { get; set; }
+    public string? Startdate { get; set; }
 
-    public DateOnly? Workschedule { get; set; }
+    public string? Workschedule { get; set; }
 
     public string? Position { get; set; }
 

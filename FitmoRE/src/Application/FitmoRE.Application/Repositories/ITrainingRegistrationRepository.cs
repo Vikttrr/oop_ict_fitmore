@@ -6,13 +6,13 @@ public interface ITrainingRegistrationRepository
 {
     string Add(TrainingRegistration fitnessService);
 
-    TrainingSignupDto GetById(string registrationId);
+    TrainingSignupDto? GetById(string registrationId);
 
     TrainingSignupResponseDto Update(FitnessService fitnessService);
 
-    TrainingSignupDto Delete(string registrationId);
+    TrainingSignupDto? Delete(string registrationId);
 
-    IEnumerable<TrainingSignupDto> GetAllByTrainingId(string trainingId);
+    IEnumerable<TrainingSignupDto?> GetAllByTrainingId(string trainingId);
 
-    IEnumerable<TrainingSignupDto> GetAllByClientId(string clientId);
+    IEnumerable<TrainingSignupDto?> GetAllByClientId(string clientId);
 }

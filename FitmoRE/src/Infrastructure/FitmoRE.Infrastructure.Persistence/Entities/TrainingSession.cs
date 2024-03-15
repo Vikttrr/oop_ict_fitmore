@@ -10,9 +10,9 @@ public partial class TrainingSession
 
     public int? Numberofparticipants { get; set; }
 
-    public DateTimeOffset? Starttime { get; set; }
+    public string? Starttime { get; set; }
 
-    public DateTimeOffset? Endtime { get; set; }
+    public string? Endtime { get; set; }
 
     public string? Description { get; set; }
 

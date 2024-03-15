@@ -32,7 +32,7 @@ public class SubscriptionService : ISubscriptionService
 
     public SubscriptionInfoResponseDto GetSubscriptionById(string subscriptionId)
     {
-        Subscription subscription = _subscriptionRepository.GetById(subscriptionId);
+        Subscription? subscription = _subscriptionRepository.GetById(subscriptionId);
         if (subscription == null)
         {
             // throw new InvalidOperationException("Subscription not found.");
@@ -46,7 +46,7 @@ public class SubscriptionService : ISubscriptionService
         {
             SubscriptionId = subscription.SubscriptionId,
             Price = subscription.Price,
-            StartDate = subscription.StartDate.ToString(),
+            StartDate = subscription.StartDate,
             Tariff = subscription.Tariff,
             UserId = subscription.ClientId,
             IsActive = true,

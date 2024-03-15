@@ -8,9 +8,9 @@ public partial class TrainingRegistration
 
     public string? Clientid { get; set; }
 
-    public DateOnly? Registrationdate { get; set; }
+    public string? Registrationdate { get; set; }
 
-    public bool? Isconfirmed { get; set; }
+    public bool Isconfirmed { get; set; }
 
     public virtual Client? Client { get; set; }
 

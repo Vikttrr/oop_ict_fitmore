@@ -4,15 +4,15 @@ public partial class GymRoom
 {
     public string Roomid { get; set; } = null!;
 
-    public string? Roomnumber { get; set; }
+    public int RoomNumber { get; set; }
 
     public int? Space { get; set; }
 
-    public double? Temperature { get; set; }
+    public string? Temperature { get; set; }
 
     public int? Capacity { get; set; }
 
-    public string? Branchid { get; set; }
+    public string? BranchId { get; set; }
 
     public virtual Branch? Branch { get; set; }
 

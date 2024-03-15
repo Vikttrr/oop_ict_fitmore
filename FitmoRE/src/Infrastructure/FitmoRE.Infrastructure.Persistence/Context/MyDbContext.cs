@@ -112,14 +112,14 @@ public partial class MyDbContext : DbContext
             entity.ToTable("GymRoom");
 
             entity.Property(e => e.Roomid).HasColumnName("roomid");
-            entity.Property(e => e.Branchid).HasColumnName("branchid");
+            entity.Property(e => e.BranchId).HasColumnName("branchid");
             entity.Property(e => e.Capacity).HasColumnName("capacity");
-            entity.Property(e => e.Roomnumber).HasColumnName("roomnumber");
+            entity.Property(e => e.RoomNumber).HasColumnName("roomnumber");
             entity.Property(e => e.Space).HasColumnName("space");
             entity.Property(e => e.Temperature).HasColumnName("temperature");
 
             entity.HasOne(d => d.Branch).WithMany(p => p.GymRooms)
-                .HasForeignKey(d => d.Branchid)
+                .HasForeignKey(d => d.BranchId)
                 .HasConstraintName("GymRoom_branchid_fkey");
         });
 

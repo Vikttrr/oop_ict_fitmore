@@ -6,9 +6,9 @@ public interface IPaymentRepository
 {
     string Add(Payment payment);
 
-    Subscription GetById(string paymentId);
+    Payment GetById(string paymentId);
 
-    SubscriptionPurchaseResponseDto Update(Payment payment);
+    SubscriptionPurchaseResponseDto? Update(Payment payment);
 
-    IEnumerable<SubscriptionPurchaseResponseDto> FindByClientId(string clientId);
+    IEnumerable<SubscriptionPurchaseResponseDto?> FindByClientId(string clientId);
 }

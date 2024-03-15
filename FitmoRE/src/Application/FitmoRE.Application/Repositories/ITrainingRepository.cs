@@ -6,11 +6,11 @@ public interface ITrainingRepository
 {
     string Add(TrainingSession trainingSession);
 
-    TrainingSession GetById(string trainingId);
+    TrainingSession? GetById(string trainingId);
 
-    TrainingInfoResponseDto Update(TrainingSession trainingSession);
+    TrainingInfoResponseDto? Update(TrainingSession trainingSession);
 
-    AddTrainingDto Delete(string trainingId);
+    AddTrainingDto? Delete(string trainingId);
 
     IEnumerable<TrainingInfoResponseDto> GetAll();
 }

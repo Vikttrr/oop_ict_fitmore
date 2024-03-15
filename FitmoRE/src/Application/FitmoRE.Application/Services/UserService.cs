@@ -58,7 +58,7 @@ public class UserService : IUserService
 
     public UserAuthResponseDto AuthenticateUser(UserAuthDto authDto)
     {
-        Client client = _userRepository.FindByPhoneAndClientId(authDto.ClientId, authDto.Phone);
+        Client? client = _userRepository.FindByPhoneAndClientId(authDto.ClientId, authDto.Phone);
 
         if (client == null)
         {

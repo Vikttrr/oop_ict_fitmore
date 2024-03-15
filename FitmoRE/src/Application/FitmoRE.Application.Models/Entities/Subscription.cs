@@ -13,7 +13,7 @@ public class Subscription
 
     public string ClientId { get; set; }
 
-    public bool IsActive { get; set; }
+    public bool? IsActive { get; set; }
 
     public Subscription(string subscriptionId, decimal price, string startDate, Tariff tariff, string clientId, bool isActive)
     {
@@ -23,5 +23,10 @@ public class Subscription
         Tariff = tariff;
         ClientId = clientId;
         IsActive = isActive;
+    }
+
+    public Subscription()
+    {
+        throw new NotImplementedException();
     }
 }

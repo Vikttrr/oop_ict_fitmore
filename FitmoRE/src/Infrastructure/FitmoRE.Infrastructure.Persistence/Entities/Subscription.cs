@@ -6,7 +6,7 @@ public partial class Subscription
 
     public decimal? Price { get; set; }
 
-    public DateOnly? Startdate { get; set; }
+    public string? Startdate { get; set; }
 
     public string? Duration { get; set; }
 

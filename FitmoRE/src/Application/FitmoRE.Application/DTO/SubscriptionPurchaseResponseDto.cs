@@ -4,5 +4,5 @@ public class SubscriptionPurchaseResponseDto
 {
     public string PaymentId { get; set; } = string.Empty;
 
-    public bool IsPaid { get; set; }
+    public bool? IsPaid { get; set; }
 }

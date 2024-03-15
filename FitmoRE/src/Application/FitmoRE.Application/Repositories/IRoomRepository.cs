@@ -6,11 +6,11 @@ public interface IRoomRepository
 {
     GymRoom GetById(string roomId);
 
-    IEnumerable<RoomInfoResponseDto> GetAll();
+    IEnumerable<RoomInfoResponseDto?> GetAll();
 
-    RoomInfoResponseDto Add(GymRoom room);
+    RoomInfoResponseDto? Add(GymRoom room);
 
-    RoomInfoResponseDto Update(GymRoom room);
+    RoomInfoResponseDto? Update(GymRoom room);
 
-    RoomInfoDto Delete(string roomId);
+    RoomInfoDto? Delete(string roomId);
 }

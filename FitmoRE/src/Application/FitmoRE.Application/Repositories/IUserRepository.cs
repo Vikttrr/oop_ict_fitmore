@@ -8,11 +8,11 @@ public interface IUserRepository
 
     Client GetById(string clientId);
 
-    Client FindByPhoneAndClientId(string id, string phone);
+    UserInfoResponseDto? Update(Client client);
 
-    UserInfoResponseDto Update(Client client);
+    UserInfoDto? Delete(string clientId);
 
-    UserInfoDto Delete(int clientId);
+    Client? FindByPhoneAndClientId(string id, string phone);
 
-    IEnumerable<UserInfoResponseDto> GetAll();
+    IEnumerable<UserInfoResponseDto?> GetAll();
 }

@@ -6,7 +6,7 @@ public partial class Client
 
     public string? Fullname { get; set; }
 
-    public DateOnly? Dateofbirth { get; set; }
+    public string? Dateofbirth { get; set; }
 
     public string? Phonenumber { get; set; }
 

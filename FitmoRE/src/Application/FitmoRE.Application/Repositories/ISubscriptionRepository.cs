@@ -5,13 +5,13 @@ public interface ISubscriptionRepository
 {
     string Add(Subscription subscription);
 
-    Subscription GetById(string subscriptionId);
+    Subscription? GetById(string subscriptionId);
 
-    Subscription Update(Subscription subscription);
+    Subscription? Update(Subscription subscription);
 
-    Subscription Delete(string subscriptionId);
+    Subscription? Delete(string subscriptionId);
 
-    IEnumerable<Subscription> GetAll();
+    IEnumerable<Subscription?> GetAll();
 
-    IEnumerable<Subscription> FindByClientId(string clientId);
+    IEnumerable<Subscription?> FindByClientId(string clientId);
 }

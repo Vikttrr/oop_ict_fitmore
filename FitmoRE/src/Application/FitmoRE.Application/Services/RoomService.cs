@@ -28,7 +28,7 @@ public class RoomService : IRoomService
         {
             RoomNum = room.RoomNumber,
             Space = room.Space,
-            Temperature = room.Temperature.ToString(),
+            Temperature = room.Temperature,
             Capacity = room.Capacity,
             BranchId = room.BranchId,
         };

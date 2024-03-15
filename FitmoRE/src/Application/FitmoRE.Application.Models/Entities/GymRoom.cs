@@ -5,15 +5,15 @@ public class GymRoom
 
     public int RoomNumber { get; set; }
 
-    public int Space { get; set; }
+    public int? Space { get; set; }
 
-    public double Temperature { get; set; }
+    public string? Temperature { get; set; }
 
-    public int Capacity { get; set; }
+    public int? Capacity { get; set; }
 
-    public string BranchId { get; set; }
+    public string? BranchId { get; set; }
 
-    public GymRoom(string roomId, int roomNumber, int space, double temperature, int capacity, string branchId)
+    public GymRoom(string roomId, int roomNumber, int space, string temperature, int capacity, string? branchId)
     {
         RoomId = roomId;
         RoomNumber = roomNumber;
@@ -21,5 +21,10 @@ public class GymRoom
         Temperature = temperature;
         Capacity = capacity;
         BranchId = branchId;
+    }
+
+    public GymRoom()
+    {
+        throw new NotImplementedException();
     }
 }

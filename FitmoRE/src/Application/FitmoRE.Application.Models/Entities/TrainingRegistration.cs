@@ -6,13 +6,13 @@ public class TrainingRegistration
 
     public string TrainingId { get; set; }
 
-    public string ClientId { get; set; }
+    public string? ClientId { get; set; }
 
-    public DateTime RegistrationDate { get; set; }
+    public string? RegistrationDate { get; set; }
 
     public bool IsConfirmed { get; set; }
 
-    public TrainingRegistration(string registrationId, string trainingId, string clientId, DateTime registrationDate, bool isConfirmed)
+    public TrainingRegistration(string registrationId, string trainingId, string? clientId, string? registrationDate, bool isConfirmed)
     {
         RegistrationId = registrationId;
         TrainingId = trainingId;

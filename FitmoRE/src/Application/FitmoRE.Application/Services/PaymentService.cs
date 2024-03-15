@@ -18,7 +18,7 @@ public class PaymentService : IPaymentService
         var payment = new Payment(
             string.Empty,
             purchaseDto.ClientId,
-            DateTime.Parse(purchaseDto.DateTime),
+            purchaseDto.DateTime,
             purchaseDto.Amount,
             true);
 
