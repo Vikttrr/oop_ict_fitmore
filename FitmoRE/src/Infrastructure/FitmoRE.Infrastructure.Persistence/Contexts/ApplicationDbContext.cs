@@ -105,11 +105,11 @@ public class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<GymRoom>(entity =>
         {
-            entity.HasKey(e => e.Roomid).HasName("GymRoom_pkey");
+            entity.HasKey(e => e.RoomId).HasName("GymRoom_pkey");
 
             entity.ToTable("GymRoom");
 
-            entity.Property(e => e.Roomid).HasColumnName("roomid");
+            entity.Property(e => e.RoomId).HasColumnName("roomid");
             entity.Property(e => e.BranchId).HasColumnName("branchid");
             entity.Property(e => e.Capacity).HasColumnName("capacity");
             entity.Property(e => e.RoomNumber).HasColumnName("roomnumber");

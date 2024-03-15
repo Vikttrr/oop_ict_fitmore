@@ -107,20 +107,20 @@ public partial class MyDbContext : DbContext
 
         modelBuilder.Entity<GymRoom>(entity =>
         {
-            entity.HasKey(e => e.Roomid).HasName("GymRoom_pkey");
+            entity.HasKey(e => e.RoomId).HasName("GymRoom_pkey");
 
             entity.ToTable("GymRoom");
 
-            entity.Property(e => e.Roomid).HasColumnName("roomid");
+            entity.Property(e => e.RoomId).HasColumnName("roomid");
             entity.Property(e => e.BranchId).HasColumnName("branchid");
             entity.Property(e => e.Capacity).HasColumnName("capacity");
             entity.Property(e => e.RoomNumber).HasColumnName("roomnumber");
             entity.Property(e => e.Space).HasColumnName("space");
             entity.Property(e => e.Temperature).HasColumnName("temperature");
 
-            entity.HasOne(d => d.Branch).WithMany(p => p.GymRooms)
-                .HasForeignKey(d => d.BranchId)
-                .HasConstraintName("GymRoom_branchid_fkey");
+            // entity.HasOne(d => d.Branch).WithMany(p => p.GymRooms)
+            //     .HasForeignKey(d => d.BranchId)
+            //     .HasConstraintName("GymRoom_branchid_fkey");
         });
 
         modelBuilder.Entity<Payment>(entity =>

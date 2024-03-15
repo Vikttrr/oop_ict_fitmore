@@ -13,7 +13,7 @@ public class GymRoom
 
     public string? BranchId { get; set; }
 
-    public GymRoom(string roomId, int roomNumber, int space, string temperature, int capacity, string? branchId)
+    public GymRoom(string roomId, int roomNumber, int space, string? temperature, int capacity, string? branchId)
     {
         RoomId = roomId;
         RoomNumber = roomNumber;

@@ -8,7 +8,7 @@ public interface IRoomRepository
 
     IEnumerable<RoomInfoResponseDto?> GetAll();
 
-    RoomInfoResponseDto? Add(GymRoom room);
+    string Add(GymRoom room);
 
     RoomInfoResponseDto? Update(GymRoom room);
 

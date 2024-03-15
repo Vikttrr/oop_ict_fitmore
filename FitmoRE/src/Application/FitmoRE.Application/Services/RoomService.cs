@@ -1,4 +1,5 @@
 using FitmoRE.Application.DTO;
+using FitmoRE.Application.Models.Entities;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Application.Services.Interfaces;
 
@@ -30,6 +31,25 @@ public class RoomService : IRoomService
             Temperature = room.Temperature,
             Capacity = room.Capacity,
             BranchId = room.BranchId,
+        };
+    }
+
+    public AddRoomResponseDto Add(AddRoomDto addRoomDto)
+    {
+        var id = new Random().Next().ToString();
+        var gymRoom = new GymRoom(
+            id,
+            addRoomDto.RoomNumber,
+            addRoomDto.Space,
+            addRoomDto.Temperature,
+            addRoomDto.Capacity,
+            addRoomDto.BranchId);
+
+        var newId = _roomRepository.Add(gymRoom);
+
+        return new AddRoomResponseDto
+        {
+            RoomId = newId,
         };
     }
 }

@@ -2,7 +2,7 @@
 
 public partial class GymRoom
 {
-    public string Roomid { get; set; } = null!;
+    public string RoomId { get; set; } = null!;
 
     public int RoomNumber { get; set; }
 

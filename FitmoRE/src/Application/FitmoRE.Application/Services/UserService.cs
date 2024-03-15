@@ -13,7 +13,6 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
-// DateTime.Parse(registrationDto.BirthDate).ToString(),
     public UserRegistrationResponseDto RegisterUser(UserRegistrationDto registrationDto)
     {
         var id = new Random().Next().ToString();

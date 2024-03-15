@@ -26,4 +26,11 @@ public class RoomController : ControllerBase
 
         return Ok(result);
     }
+
+    [HttpPost("add")]
+    public ActionResult<AddRoomResponseDto> Add(AddRoomDto addRoomDto)
+    {
+        AddRoomResponseDto result = _gymRoomService.Add(addRoomDto);
+        return Ok(result);
+    }
 }

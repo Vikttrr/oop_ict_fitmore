@@ -6,5 +6,5 @@ public class TrainingSignupDto
 
     public string? ClientId { get; set; } = string.Empty;
 
-    public string? DateTime { get; set; } = string.Empty;
+    // public string? DateTime { get; set; } = string.Empty;
 }

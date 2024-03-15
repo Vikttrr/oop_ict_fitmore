@@ -4,4 +4,6 @@ namespace FitmoRE.Application.Services.Interfaces;
 public interface IRoomService
 {
     RoomInfoResponseDto GetRoomInfo(string roomId);
+
+    AddRoomResponseDto Add(AddRoomDto addRoomDto);
 }

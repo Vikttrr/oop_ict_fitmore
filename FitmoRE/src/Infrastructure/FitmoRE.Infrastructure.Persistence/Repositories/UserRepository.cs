@@ -60,9 +60,9 @@ public class UserRepository : IUserRepository
         return null;
     }
 
-    public Client? FindByPhoneAndClientId(string id, string phone)
+    public Client? FindByPhoneAndClientId(string clientId, string phone)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.Client? entity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == id && c.Phonenumber == phone);
+        FitmoRE.Infrastructure.Persistence.Entities.Client? entity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == clientId && c.Phonenumber == phone);
         return entity != null ? MapEntityToClient(entity) : null;
     }
 

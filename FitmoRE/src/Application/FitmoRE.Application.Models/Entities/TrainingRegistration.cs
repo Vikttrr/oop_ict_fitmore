@@ -12,12 +12,13 @@ public class TrainingRegistration
 
     public bool IsConfirmed { get; set; }
 
-    public TrainingRegistration(string registrationId, string trainingId, string? clientId, string? registrationDate, bool isConfirmed)
+    public TrainingRegistration(string registrationId, string trainingId, string? clientId, bool isConfirmed)
     {
         RegistrationId = registrationId;
         TrainingId = trainingId;
         ClientId = clientId;
-        RegistrationDate = registrationDate;
+
+        // RegistrationDate = registrationDate;
         IsConfirmed = isConfirmed;
     }
 }

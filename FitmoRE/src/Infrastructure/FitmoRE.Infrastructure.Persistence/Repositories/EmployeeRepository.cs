@@ -88,7 +88,7 @@ public class EmployeeRepository : IEmployeeRepository
         {
             return new FitmoRE.Infrastructure.Persistence.Entities.Employee
             {
-                EmployeeId = model.EmployeeId,
+                // EmployeeId = model.EmployeeId,
                 Fullname = model.FullName,
                 Phonenumber = model.PhoneNumber,
                 Email = model.Email,

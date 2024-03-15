@@ -40,7 +40,8 @@ public class TrainingRegistrationRepository : ITrainingRegistrationRepository
         {
             existingEntity.Trainingid = registration.TrainingId;
             existingEntity.Clientid = registration.ClientId;
-            existingEntity.Registrationdate = registration.RegistrationDate;
+
+            // existingEntity.Registrationdate = registration.RegistrationDate;
             existingEntity.Isconfirmed = registration.IsConfirmed;
             _dbContext.SaveChanges();
             return MapEntityToTrainingSignupResponseDto(existingEntity);
@@ -81,7 +82,8 @@ public class TrainingRegistrationRepository : ITrainingRegistrationRepository
             Registrationid = model.RegistrationId,
             Trainingid = model.TrainingId,
             Clientid = model.ClientId,
-            Registrationdate = model.RegistrationDate,
+
+            // Registrationdate = model.RegistrationDate,
             Isconfirmed = model.IsConfirmed,
         };
     }
@@ -92,7 +94,8 @@ public class TrainingRegistrationRepository : ITrainingRegistrationRepository
         {
             TrainingId = entity.Registrationid,
             ClientId = entity.Clientid,
-            DateTime = entity.Registrationdate,
+
+            // DateTime = entity.Registrationdate,
         };
     }
 

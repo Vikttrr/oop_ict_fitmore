@@ -68,16 +68,14 @@ namespace FitmoRE.Infrastructure.Persistence.Repositories;
 
         private TrainingSession? MapEntityToTraining(FitmoRE.Infrastructure.Persistence.Entities.TrainingSession entity)
         {
-            return new TrainingSession
-            {
-                TrainingId = entity.Trainingid,
-                RoomId = entity.Roomid ?? string.Empty,
-                EmployeeId = entity.Employeeid,
-                NumberOfParticipants = entity.Numberofparticipants ?? 0,
-                StartTime = entity.Starttime,
-                EndTime = entity.Endtime,
-                Description = entity.Description,
-            };
+            return new TrainingSession(
+                entity.Trainingid,
+                entity.Roomid ?? string.Empty,
+                entity.Employeeid,
+                entity.Numberofparticipants ?? 0,
+                entity.Starttime,
+                entity.Endtime,
+                entity.Description);
         }
 
         private FitmoRE.Infrastructure.Persistence.Entities.TrainingSession MapTrainingToEntity(TrainingSession model)

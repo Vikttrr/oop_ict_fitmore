@@ -12,7 +12,7 @@ public interface IUserRepository
 
     UserInfoDto? Delete(string clientId);
 
-    Client? FindByPhoneAndClientId(string id, string phone);
+    Client? FindByPhoneAndClientId(string clientId, string phone);
 
     IEnumerable<UserInfoResponseDto?> GetAll();
 }

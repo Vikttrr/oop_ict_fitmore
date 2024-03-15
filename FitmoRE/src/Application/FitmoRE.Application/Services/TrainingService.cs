@@ -63,8 +63,9 @@ public class TrainingService : ITrainingService
             id,
             signupDto.TrainingId,
             signupDto.ClientId,
-            signupDto.DateTime,
             true);
+
+            // signupDto.DateTime,
         _trainingRegistrationRepository.Add(trainingRegistration);
 
         return new TrainingSignupResponseDto
