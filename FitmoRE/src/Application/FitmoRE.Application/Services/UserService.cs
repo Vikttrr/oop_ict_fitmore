@@ -13,30 +13,30 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
+// DateTime.Parse(registrationDto.BirthDate).ToString(),
     public UserRegistrationResponseDto RegisterUser(UserRegistrationDto registrationDto)
     {
+        var id = new Random().Next().ToString();
         var client = new Client(
-            string.Empty,
+            id,
             registrationDto.FullName,
-            DateTime.Parse(registrationDto.BirthDate).ToString(),
+            registrationDto.BirthDate,
             registrationDto.Phone,
             registrationDto.Email,
-            string.Empty,
             true);
-        string id = _userRepository.Add(client);
+        string newId = _userRepository.Add(client);
 
         return new UserRegistrationResponseDto
         {
-            UserId = id,
+            UserId = newId,
         };
     }
 
     public UserInfoResponseDto GetUserInfo(string clientId)
     {
         Client client = _userRepository.GetById(clientId);
-        if (client == null)
+        if (string.IsNullOrEmpty(client.ClientId))
         {
-            // throw new InvalidOperationException("User is not found");
             return new UserInfoResponseDto()
             {
                 FullName = string.Empty,
@@ -49,10 +49,8 @@ public class UserService : IUserService
             BirthDate = client.DateOfBirth,
             Phone = client.PhoneNumber,
             Email = client.Email,
-            Address = client.Address,
-
-            // SubscriptionType = "basic",
             IsActive = client.IsActive,
+            ClientId = client.ClientId,
         };
     }
 
@@ -62,7 +60,7 @@ public class UserService : IUserService
 
         if (client == null)
         {
-            throw new UnauthorizedAccessException("Authorization failed: User not found or incorrect credentials.");
+            return new UserAuthResponseDto { Message = string.Empty, };
         }
 
         return new UserAuthResponseDto

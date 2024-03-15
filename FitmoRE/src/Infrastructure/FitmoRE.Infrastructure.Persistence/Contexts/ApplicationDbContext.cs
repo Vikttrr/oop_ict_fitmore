@@ -11,6 +11,12 @@ public class ApplicationDbContext : DbContext
         Database.EnsureCreated();
     }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder
+            .EnableSensitiveDataLogging();
+    }
+
     public DbSet<Employee>? Employees { get; set; }
 
     public DbSet<Client>? Clients { get; set; }
@@ -110,9 +116,9 @@ public class ApplicationDbContext : DbContext
             entity.Property(e => e.Space).HasColumnName("space");
             entity.Property(e => e.Temperature).HasColumnName("temperature");
 
-            entity.HasOne(d => d.Branch).WithMany(p => p.GymRooms)
-                .HasForeignKey(d => d.BranchId)
-                .HasConstraintName("GymRoom_branchid_fkey");
+            // entity.HasOne(d => d.Branch).WithMany(p => p.GymRooms)
+            //     .HasForeignKey(d => d.BranchId)
+            //     .HasConstraintName("GymRoom_branchid_fkey");
         });
 
         modelBuilder.Entity<Payment>(entity =>
@@ -230,12 +236,14 @@ public class ApplicationDbContext : DbContext
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.Employeeid).HasColumnName("employeeid ");
             entity.Property(e => e.Endtime)
-                .HasColumnType("time with time zone")
+
+                // .HasColumnType("time with time zone")
                 .HasColumnName("endtime");
             entity.Property(e => e.Numberofparticipants).HasColumnName("numberofparticipants");
             entity.Property(e => e.Roomid).HasColumnName("roomid");
             entity.Property(e => e.Starttime)
-                .HasColumnType("time with time zone")
+
+                // .HasColumnType("time with time zone")
                 .HasColumnName("starttime");
 
             entity.HasOne(d => d.Employee).WithMany(p => p.TrainingSessions)

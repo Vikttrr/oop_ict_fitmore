@@ -15,13 +15,13 @@ public class TrainingController : ControllerBase
     }
 
     [HttpGet("{trainingInfoDto}")]
-    public ActionResult<TrainingInfoResponseDto> GetTraining(TrainingInfoDto trainingInfoDto)
+    public ActionResult<TrainingInfoResponseDto> GetTraining(string trainingInfoDto)
     {
-        TrainingInfoResponseDto result = _trainingService.GetTrainingInfo(trainingInfoDto.TrainingId);
+        TrainingInfoResponseDto result = _trainingService.GetTrainingInfo(trainingInfoDto);
 
         if (string.IsNullOrEmpty(result.EmployeeId))
         {
-            return NotFound();
+            return NotFound("what is u:(");
         }
 
         return Ok(result);
@@ -31,7 +31,7 @@ public class TrainingController : ControllerBase
     public ActionResult<bool> SignUp(TrainingSignupDto signupForTrainingDto)
     {
         TrainingSignupResponseDto result = _trainingService.SignupForTraining(signupForTrainingDto);
-        return Ok(result);
+        return Ok("see u there!");
     }
 
     [HttpPost("addTraining")]

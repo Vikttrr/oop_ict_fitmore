@@ -18,8 +18,9 @@ public class Employee
 
     public bool? IsActive { get; set; }
 
-    public Employee(string? fullName, string? phoneNumber, string? email, string? startDate, string? workSchedule, string? position, bool isActive)
+    public Employee(string employeeId, string? fullName, string? phoneNumber, string? email, string? startDate, string? workSchedule, string? position, bool isActive)
     {
+        EmployeeId = employeeId;
         FullName = fullName;
         PhoneNumber = phoneNumber;
         Email = email;
@@ -31,6 +32,6 @@ public class Employee
 
     public Employee()
     {
-        throw new NotImplementedException();
+        EmployeeId = string.Empty;
     }
 }

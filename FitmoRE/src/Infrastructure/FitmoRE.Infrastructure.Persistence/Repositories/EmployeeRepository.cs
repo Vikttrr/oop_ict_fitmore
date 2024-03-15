@@ -26,7 +26,7 @@ public class EmployeeRepository : IEmployeeRepository
         {
             FitmoRE.Infrastructure.Persistence.Entities.Employee? entity =
                 _dbContext.Employees?.FirstOrDefault(c => c.EmployeeId == id);
-            return (entity != null ? MapEntityToEmployee(entity) : null) ?? throw new InvalidOperationException();
+            return (entity != null ? MapEntityToEmployee(entity) : null) ?? new Employee();
         }
 
         public EmployeeInfoResponseDto? Update(Employee employee)

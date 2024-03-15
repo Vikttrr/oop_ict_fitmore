@@ -17,19 +17,20 @@ public class TrainingService : ITrainingService
 
     public AddTrainingResponseDto AddTraining(AddTrainingDto trainingDto)
     {
+        var id = new Random().Next().ToString();
         var trainingSession = new TrainingSession(
-            string.Empty,
+            id,
             trainingDto.RoomId,
             trainingDto.EmployeeId,
             trainingDto.ParticipantsNumber,
             trainingDto.StartTime,
             trainingDto.EndTime,
             trainingDto.Description);
-        string id = _trainingRepository.Add(trainingSession);
+        string newId = _trainingRepository.Add(trainingSession);
 
         return new AddTrainingResponseDto
         {
-            TrainingId = id,
+            TrainingId = newId,
         };
     }
 
@@ -38,7 +39,6 @@ public class TrainingService : ITrainingService
         TrainingSession? training = _trainingRepository.GetById(trainingId);
         if (training == null)
         {
-            // throw new InvalidOperationException("Training session is not found");
             return new TrainingInfoResponseDto()
             {
                 EmployeeId = string.Empty,
@@ -58,8 +58,9 @@ public class TrainingService : ITrainingService
 
     public TrainingSignupResponseDto SignupForTraining(TrainingSignupDto signupDto)
     {
+        var id = new Random().Next().ToString();
         var trainingRegistration = new TrainingRegistration(
-            string.Empty,
+            id,
             signupDto.TrainingId,
             signupDto.ClientId,
             signupDto.DateTime,

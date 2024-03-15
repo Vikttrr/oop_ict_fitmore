@@ -17,12 +17,12 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("{userInfoDto}")]
-    public ActionResult<UserInfoResponseDto> GetUserInfo(UserInfoDto userInfoDto)
+    public ActionResult<UserInfoResponseDto> GetUserInfo(string userInfoDto)
     {
-        UserInfoResponseDto result = _userService.GetUserInfo(userInfoDto.ClientId);
+        UserInfoResponseDto result = _userService.GetUserInfo(userInfoDto);
         if (string.IsNullOrEmpty(result.FullName))
         {
-            return NotFound();
+            return NotFound("who r u:(");
         }
 
         return Ok(result);
@@ -40,12 +40,11 @@ public class UserController : ControllerBase
     {
         UserAuthResponseDto result = _userService.AuthenticateUser(authenticateClientDto);
 
-        // if (string.IsNullOrEmpty(result.Message))
-        // {
-        //     return NotFound();
-        // }
-        //
-        // return Ok("you are signed in!");
+        if (string.IsNullOrEmpty(result.Message))
+        {
+            return NotFound("who r u:(");
+        }
+
         return result;
     }
 }

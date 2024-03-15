@@ -15,13 +15,13 @@ public class RoomController : ControllerBase
     }
 
     [HttpGet("{roomInfoDto}")]
-    public ActionResult<RoomInfoResponseDto> Get(RoomInfoDto roomInfoDto)
+    public ActionResult<RoomInfoResponseDto> Get(string roomInfoDto)
     {
         RoomInfoResponseDto result = _gymRoomService.GetRoomInfo(roomInfoDto);
 
         if (string.IsNullOrEmpty(result.BranchId))
         {
-            return NotFound();
+            return NotFound("what is u:(");
         }
 
         return Ok(result);

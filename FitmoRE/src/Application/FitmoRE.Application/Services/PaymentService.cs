@@ -15,17 +15,18 @@ public class PaymentService : IPaymentService
 
     public SubscriptionPurchaseResponseDto PurchaseSubscription(SubscriptionPurchaseDto purchaseDto)
     {
+        var id = new Random().Next().ToString();
         var payment = new Payment(
-            string.Empty,
+            id,
             purchaseDto.ClientId,
             purchaseDto.DateTime,
             purchaseDto.Amount,
             true);
 
-        string id = _paymentRepository.Add(payment);
+        string newId = _paymentRepository.Add(payment);
         return new SubscriptionPurchaseResponseDto
         {
-            PaymentId = id,
+            PaymentId = newId,
             IsPaid = true,
         };
     }

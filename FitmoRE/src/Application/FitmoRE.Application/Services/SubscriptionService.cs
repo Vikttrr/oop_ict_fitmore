@@ -15,18 +15,19 @@ public class SubscriptionService : ISubscriptionService
 
     public AddSubscriptionResponseDto AddSubscription(AddSubscriptionDto subscriptionDto)
     {
+        var id = new Random().Next().ToString();
         var subscription = new Subscription(
-            string.Empty,
+            id,
             subscriptionDto.Price,
             DateTime.Parse(subscriptionDto.StartDate).ToString(),
             subscriptionDto.Tariff,
             subscriptionDto.UserId,
             subscriptionDto.IsActive);
-        string id = _subscriptionRepository.Add(subscription);
+        string newId = _subscriptionRepository.Add(subscription);
 
         return new AddSubscriptionResponseDto
         {
-            SubscriptionId = id,
+            SubscriptionId = newId,
         };
     }
 
@@ -35,7 +36,6 @@ public class SubscriptionService : ISubscriptionService
         Subscription? subscription = _subscriptionRepository.GetById(subscriptionId);
         if (subscription == null)
         {
-            // throw new InvalidOperationException("Subscription not found.");
             return new SubscriptionInfoResponseDto()
             {
                 StartDate = string.Empty,

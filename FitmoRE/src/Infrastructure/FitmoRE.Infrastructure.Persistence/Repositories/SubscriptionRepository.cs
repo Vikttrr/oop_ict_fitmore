@@ -72,14 +72,13 @@ public class SubscriptionRepository : ISubscriptionRepository
 
     private Subscription? MapEntityToSubscription(FitmoRE.Infrastructure.Persistence.Entities.Subscription entity)
     {
-        return new Subscription
-        {
-            SubscriptionId = entity.Subscriptionid,
-            Price = entity.Price ?? 0,
-            StartDate = entity.Startdate ?? string.Empty,
-            ClientId = entity.Clientid ?? string.Empty,
-            IsActive = entity.Isactive,
-        };
+        return new Subscription(
+            entity.Subscriptionid,
+            entity.Price ?? 0,
+            entity.Startdate ?? string.Empty,
+            new Tariff(0, 0),
+            entity.Clientid ?? string.Empty,
+            true);
     }
 
     private FitmoRE.Infrastructure.Persistence.Entities.Subscription MapSubscriptionToEntity(Subscription model)

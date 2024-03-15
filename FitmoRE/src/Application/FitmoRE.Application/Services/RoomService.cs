@@ -12,12 +12,11 @@ public class RoomService : IRoomService
         _roomRepository = roomRepository;
     }
 
-    public RoomInfoResponseDto GetRoomInfo(RoomInfoDto roomId)
+    public RoomInfoResponseDto GetRoomInfo(string roomId)
     {
-        Models.Entities.GymRoom room = _roomRepository.GetById(roomId.RoomId);
-        if (room == null)
+        Models.Entities.GymRoom room = _roomRepository.GetById(roomId);
+        if (string.IsNullOrEmpty(room.RoomId))
         {
-            // throw new InvalidOperationException("Room is not found");
             return new RoomInfoResponseDto()
             {
                 BranchId = string.Empty,

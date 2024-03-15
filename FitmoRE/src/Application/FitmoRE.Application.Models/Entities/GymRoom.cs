@@ -25,6 +25,6 @@ public class GymRoom
 
     public GymRoom()
     {
-        throw new NotImplementedException();
+       RoomId = string.Empty;
     }
 }

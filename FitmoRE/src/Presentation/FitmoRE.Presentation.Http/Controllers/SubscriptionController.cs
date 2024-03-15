@@ -22,7 +22,7 @@ public class SubscriptionController : ControllerBase
         SubscriptionInfoResponseDto result = _subscriptionService.GetSubscriptionById(subscriptionId);
         if (string.IsNullOrEmpty(result.StartDate))
         {
-            return NotFound();
+            return NotFound("what is u:(");
         }
 
         return Ok(result);

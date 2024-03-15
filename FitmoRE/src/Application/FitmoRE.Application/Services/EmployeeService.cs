@@ -15,29 +15,30 @@ public class EmployeeService : IEmployeeService
 
     public AddEmployeeResponseDto AddEmployee(AddEmployeeDto employeeDto)
     {
+        var id = new Random().Next().ToString();
         var employee = new Employee(
+            id,
             employeeDto.FullName,
             employeeDto.PhoneNumber,
             employeeDto.Email,
-            DateTime.Parse(employeeDto.StartDate).ToString(),
+            employeeDto.StartDate,
             employeeDto.WorkSchedule,
             employeeDto.Position,
             true);
 
-        string id = _employeeRepository.Add(employee);
+        string newId = _employeeRepository.Add(employee);
 
         return new AddEmployeeResponseDto
         {
-            EmployeeId = id,
+            EmployeeId = newId,
         };
     }
 
     public EmployeeInfoResponseDto GetEmployeeInfo(string employeeId)
     {
         Employee employee = _employeeRepository.GetById(employeeId);
-        if (employee == null)
+        if (string.IsNullOrEmpty(employee.EmployeeId))
         {
-            // throw new InvalidOperationException("Employee is not found");
             return new EmployeeInfoResponseDto()
             {
                 FullName = string.Empty,

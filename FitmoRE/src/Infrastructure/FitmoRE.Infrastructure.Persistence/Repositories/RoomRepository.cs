@@ -31,7 +31,7 @@ public class RoomRepository : IRoomRepository
         public GymRoom GetById(string roomId)
         {
             FitmoRE.Infrastructure.Persistence.Entities.GymRoom? entity = _dbContext.GymRooms?.FirstOrDefault(r => r.Roomid == roomId);
-            return (entity != null ? MapEntityToGymRoom(entity) : null) ?? throw new InvalidOperationException();
+            return (entity != null ? MapEntityToGymRoom(entity) : null) ?? new GymRoom();
         }
 
         public RoomInfoResponseDto? Update(GymRoom room)

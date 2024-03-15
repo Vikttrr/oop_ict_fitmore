@@ -22,7 +22,7 @@ public class EmployeeController : ControllerBase
         EmployeeInfoResponseDto result = _employeeService.GetEmployeeInfo(employeeId);
         if (string.IsNullOrEmpty(result.FullName))
         {
-            return NotFound();
+            return NotFound("who r u:(");
         }
 
         return Ok(result);

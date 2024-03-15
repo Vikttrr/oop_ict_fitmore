@@ -25,7 +25,7 @@ public class UserRepository : IUserRepository
     public Client GetById(string clientId)
     {
         FitmoRE.Infrastructure.Persistence.Entities.Client? entity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == clientId);
-        return (entity != null ? MapEntityToClient(entity) : null) ?? throw new InvalidOperationException();
+        return (entity != null ? MapEntityToClient(entity) : null) ?? new Client();
     }
 
     public UserInfoResponseDto? Update(Client client)
@@ -74,15 +74,13 @@ public class UserRepository : IUserRepository
 
     private Client MapEntityToClient(FitmoRE.Infrastructure.Persistence.Entities.Client entity)
     {
-        return new Client
-        {
-            ClientId = entity.Clientid,
-            FullName = entity.Fullname,
-            DateOfBirth = entity.Dateofbirth,
-            PhoneNumber = entity.Phonenumber,
-            Email = entity.Email,
-            IsActive = entity.Isactive ?? false,
-        };
+        return new Client(
+            entity.Clientid,
+            entity.Fullname,
+            entity.Dateofbirth,
+            entity.Phonenumber,
+            entity.Email,
+            entity.Isactive ?? false);
     }
 
     private FitmoRE.Infrastructure.Persistence.Entities.Client MapClientToEntity(Client model)
