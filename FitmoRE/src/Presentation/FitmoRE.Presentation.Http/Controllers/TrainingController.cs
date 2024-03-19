@@ -14,10 +14,10 @@ public class TrainingController : ControllerBase
         _trainingService = trainingService;
     }
 
-    [HttpGet("{trainingInfoDto}")]
-    public ActionResult<TrainingInfoResponseDto> GetTraining(string trainingInfoDto)
+    [HttpGet("{trainingInfo}")]
+    public ActionResult<TrainingInfoResponseDto> GetTraining(string trainingInfo)
     {
-        TrainingInfoResponseDto result = _trainingService.GetTrainingInfo(trainingInfoDto);
+        TrainingInfoResponseDto result = _trainingService.GetTrainingInfo(trainingInfo);
 
         if (string.IsNullOrEmpty(result.EmployeeId))
         {
@@ -27,14 +27,14 @@ public class TrainingController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPost("signupForTraining")]
+    [HttpPost("sign-up-for-training")]
     public ActionResult<bool> SignUp(TrainingSignupDto signupForTrainingDto)
     {
         TrainingSignupResponseDto result = _trainingService.SignupForTraining(signupForTrainingDto);
         return Ok("see u there!");
     }
 
-    [HttpPost("addTraining")]
+    [HttpPost("add-training")]
     public ActionResult<AddTrainingResponseDto> AddTraining(AddTrainingDto addTrainingDto)
     {
         AddTrainingResponseDto result = _trainingService.AddTraining(addTrainingDto);

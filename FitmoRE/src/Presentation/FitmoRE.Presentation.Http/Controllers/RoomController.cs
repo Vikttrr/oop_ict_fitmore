@@ -14,10 +14,10 @@ public class RoomController : ControllerBase
         _gymRoomService = gymRoomService;
     }
 
-    [HttpGet("{roomInfoDto}")]
-    public ActionResult<RoomInfoResponseDto> Get(string roomInfoDto)
+    [HttpGet("{roomInfo}")]
+    public ActionResult<RoomInfoResponseDto> Get(string roomInfo)
     {
-        RoomInfoResponseDto result = _gymRoomService.GetRoomInfo(roomInfoDto);
+        RoomInfoResponseDto result = _gymRoomService.GetRoomInfo(roomInfo);
 
         if (string.IsNullOrEmpty(result.BranchId))
         {

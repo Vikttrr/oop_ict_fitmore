@@ -16,10 +16,10 @@ public class UserController : ControllerBase
         _userService = userService;
     }
 
-    [HttpGet("{userInfoDto}")]
-    public ActionResult<UserInfoResponseDto> GetUserInfo(string userInfoDto)
+    [HttpGet("{userId}")]
+    public ActionResult<UserInfoResponseDto> GetUserInfo(string userId)
     {
-        UserInfoResponseDto result = _userService.GetUserInfo(userInfoDto);
+        UserInfoResponseDto result = _userService.GetUserInfo(userId);
         if (string.IsNullOrEmpty(result.FullName))
         {
             return NotFound("who r u:(");
