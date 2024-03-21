@@ -1,5 +1,5 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Application.Services.Interfaces;
 
@@ -15,8 +15,8 @@ public class EmployeeService : IEmployeeService
 
     public AddEmployeeResponseDto AddEmployee(AddEmployeeDto employeeDto)
     {
-        var id = new Random().Next().ToString();
-        var employee = new Employee(
+        string id = new Random().Next().ToString();
+        var employee = new EmployeeModel(
             id,
             employeeDto.FullName,
             employeeDto.PhoneNumber,
@@ -36,8 +36,8 @@ public class EmployeeService : IEmployeeService
 
     public EmployeeInfoResponseDto GetEmployeeInfo(string employeeId)
     {
-        Employee employee = _employeeRepository.GetById(employeeId);
-        if (string.IsNullOrEmpty(employee.EmployeeId))
+        EmployeeModel employeeModel = _employeeRepository.GetById(employeeId);
+        if (string.IsNullOrEmpty(employeeModel.EmployeeId))
         {
             return new EmployeeInfoResponseDto()
             {
@@ -47,12 +47,12 @@ public class EmployeeService : IEmployeeService
 
         return new EmployeeInfoResponseDto
         {
-            FullName = employee.FullName,
-            PhoneNumber = employee.PhoneNumber,
-            Email = employee.Email,
-            StartDate = employee.StartDate,
-            WorkSchedule = employee.WorkSchedule,
-            Position = employee.Position,
+            FullName = employeeModel.FullName,
+            PhoneNumber = employeeModel.PhoneNumber,
+            Email = employeeModel.Email,
+            StartDate = employeeModel.StartDate,
+            WorkSchedule = employeeModel.WorkSchedule,
+            Position = employeeModel.Position,
         };
     }
 }

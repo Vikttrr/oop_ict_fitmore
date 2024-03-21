@@ -1,5 +1,5 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Application.Services.Interfaces;
 
@@ -17,8 +17,8 @@ public class TrainingService : ITrainingService
 
     public AddTrainingResponseDto AddTraining(AddTrainingDto trainingDto)
     {
-        var id = new Random().Next().ToString();
-        var trainingSession = new TrainingSession(
+        string id = new Random().Next().ToString();
+        var trainingSession = new TrainingSessionModel(
             id,
             trainingDto.RoomId,
             trainingDto.EmployeeId,
@@ -36,7 +36,7 @@ public class TrainingService : ITrainingService
 
     public TrainingInfoResponseDto GetTrainingInfo(string trainingId)
     {
-        TrainingSession? training = _trainingRepository.GetById(trainingId);
+        TrainingSessionModel? training = _trainingRepository.GetById(trainingId);
         if (training == null)
         {
             return new TrainingInfoResponseDto()
@@ -58,8 +58,8 @@ public class TrainingService : ITrainingService
 
     public TrainingSignupResponseDto SignupForTraining(TrainingSignupDto signupDto)
     {
-        var id = new Random().Next().ToString();
-        var trainingRegistration = new TrainingRegistration(
+        string id = new Random().Next().ToString();
+        var trainingRegistration = new TrainingRegistrationModel(
             id,
             signupDto.TrainingId,
             signupDto.ClientId,

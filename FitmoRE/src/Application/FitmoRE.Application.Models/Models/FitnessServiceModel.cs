@@ -1,6 +1,6 @@
-namespace FitmoRE.Application.Models.Entities;
+namespace FitmoRE.Application.Models.Models;
 
-public class FitnessService
+public class FitnessServiceModel
 {
     public string ServiceId { get; set; }
 
@@ -16,7 +16,7 @@ public class FitnessService
 
     public string Type { get; set; }
 
-    public FitnessService(string serviceId, string roomId, string employeeId, TimeSpan duration, decimal cost, string type, string description)
+    public FitnessServiceModel(string serviceId, string roomId, string employeeId, TimeSpan duration, decimal cost, string type, string description)
     {
         ServiceId = serviceId;
         RoomId = roomId;

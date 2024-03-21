@@ -1,7 +1,8 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Infrastructure.Persistence.Contexts;
+using FitmoRE.Infrastructure.Persistence.Entities;
 
 namespace FitmoRE.Infrastructure.Persistence.Repositories;
 
@@ -14,30 +15,30 @@ public class UserRepository : IUserRepository
         _dbContext = dbContext;
     }
 
-    public string Add(Client client)
+    public string Add(ClientModel clientModel)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.Client entity = MapClientToEntity(client);
+        Client entity = MapClientToEntity(clientModel);
         _dbContext.Clients?.Add(entity);
         _dbContext.SaveChanges();
         return entity.Clientid;
     }
 
-    public Client GetById(string clientId)
+    public ClientModel GetById(string clientId)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.Client? entity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == clientId);
-        return (entity != null ? MapEntityToClient(entity) : null) ?? new Client();
+        Client? entity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == clientId);
+        return (entity != null ? MapEntityToClient(entity) : null) ?? new ClientModel();
     }
 
-    public UserInfoResponseDto? Update(Client client)
+    public UserInfoResponseDto? Update(ClientModel clientModel)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.Client? existingEntity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == client.ClientId);
+        Client? existingEntity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == clientModel.ClientId);
         if (existingEntity != null)
         {
-            existingEntity.Fullname = client.FullName;
-            existingEntity.Dateofbirth = client.DateOfBirth;
-            existingEntity.Phonenumber = client.PhoneNumber;
-            existingEntity.Email = client.Email;
-            existingEntity.Isactive = client.IsActive;
+            existingEntity.Fullname = clientModel.FullName;
+            existingEntity.Dateofbirth = clientModel.DateOfBirth;
+            existingEntity.Phonenumber = clientModel.PhoneNumber;
+            existingEntity.Email = clientModel.Email;
+            existingEntity.Isactive = clientModel.IsActive;
 
             _dbContext.SaveChanges();
 
@@ -49,7 +50,7 @@ public class UserRepository : IUserRepository
 
     public UserInfoDto? Delete(string clientId)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.Client? entity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == clientId);
+        Client? entity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == clientId);
         if (entity != null)
         {
             _dbContext.Clients?.Remove(entity);
@@ -60,9 +61,9 @@ public class UserRepository : IUserRepository
         return null;
     }
 
-    public Client? FindByPhoneAndClientId(string clientId, string phone)
+    public ClientModel? FindByPhoneAndClientId(string clientId, string phone)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.Client? entity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == clientId && c.Phonenumber == phone);
+        Client? entity = _dbContext.Clients?.FirstOrDefault(c => c.Clientid == clientId && c.Phonenumber == phone);
         return entity != null ? MapEntityToClient(entity) : null;
     }
 
@@ -72,9 +73,9 @@ public class UserRepository : IUserRepository
         return entities?.Select(MapEntityToUserInfoResponseDto) ?? Array.Empty<UserInfoResponseDto?>();
     }
 
-    private Client MapEntityToClient(FitmoRE.Infrastructure.Persistence.Entities.Client entity)
+    private ClientModel MapEntityToClient(Client entity)
     {
-        return new Client(
+        return new ClientModel(
             entity.Clientid,
             entity.Fullname,
             entity.Dateofbirth,
@@ -83,9 +84,9 @@ public class UserRepository : IUserRepository
             entity.Isactive ?? false);
     }
 
-    private FitmoRE.Infrastructure.Persistence.Entities.Client MapClientToEntity(Client model)
+    private Client MapClientToEntity(ClientModel model)
     {
-        return new FitmoRE.Infrastructure.Persistence.Entities.Client
+        return new Client
         {
             Clientid = model.ClientId,
             Fullname = model.FullName,
@@ -96,7 +97,7 @@ public class UserRepository : IUserRepository
         };
     }
 
-    private UserInfoResponseDto? MapEntityToUserInfoResponseDto(FitmoRE.Infrastructure.Persistence.Entities.Client entity)
+    private UserInfoResponseDto? MapEntityToUserInfoResponseDto(Client entity)
     {
         return new UserInfoResponseDto
         {
@@ -109,7 +110,7 @@ public class UserRepository : IUserRepository
         };
     }
 
-    private UserInfoDto MapEntityToUserInfoDto(FitmoRE.Infrastructure.Persistence.Entities.Client entity)
+    private UserInfoDto MapEntityToUserInfoDto(Client entity)
     {
         return new UserInfoDto
         {

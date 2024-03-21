@@ -1,5 +1,5 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Application.Services.Interfaces;
 
@@ -15,8 +15,8 @@ public class PaymentService : IPaymentService
 
     public SubscriptionPurchaseResponseDto PurchaseSubscription(SubscriptionPurchaseDto purchaseDto)
     {
-        var id = new Random().Next().ToString();
-        var payment = new Payment(
+        string id = new Random().Next().ToString();
+        var payment = new PaymentModel(
             id,
             purchaseDto.ClientId,
             purchaseDto.DateTime,

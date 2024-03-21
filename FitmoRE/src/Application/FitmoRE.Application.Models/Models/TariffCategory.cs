@@ -1,4 +1,4 @@
-namespace FitmoRE.Application.Models.Entities;
+namespace FitmoRE.Application.Models.Models;
 
 public enum TariffCategory
 {

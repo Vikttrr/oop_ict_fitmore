@@ -1,18 +1,18 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 
 namespace FitmoRE.Application.Repositories;
 public interface IUserRepository
 {
-    string Add(Client client);
+    string Add(ClientModel clientModel);
 
-    Client GetById(string clientId);
+    ClientModel GetById(string clientId);
 
-    UserInfoResponseDto? Update(Client client);
+    UserInfoResponseDto? Update(ClientModel clientModel);
 
     UserInfoDto? Delete(string clientId);
 
-    Client? FindByPhoneAndClientId(string clientId, string phone);
+    ClientModel? FindByPhoneAndClientId(string clientId, string phone);
 
     IEnumerable<UserInfoResponseDto?> GetAll();
 }

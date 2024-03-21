@@ -1,7 +1,8 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Infrastructure.Persistence.Contexts;
+using FitmoRE.Infrastructure.Persistence.Entities;
 
 namespace FitmoRE.Infrastructure.Persistence.Repositories;
 
@@ -14,33 +15,33 @@ public class EmployeeRepository : IEmployeeRepository
             _dbContext = dbContext;
         }
 
-        public string Add(Employee employee)
+        public string Add(EmployeeModel employeeModel)
         {
-            FitmoRE.Infrastructure.Persistence.Entities.Employee entity = MapEmployeeToEntity(employee);
+            Employee entity = MapEmployeeToEntity(employeeModel);
             _dbContext.Employees?.Add(entity);
             _dbContext.SaveChanges();
             return entity.EmployeeId;
         }
 
-        public Employee GetById(string id)
+        public EmployeeModel GetById(string id)
         {
-            FitmoRE.Infrastructure.Persistence.Entities.Employee? entity =
+            Employee? entity =
                 _dbContext.Employees?.FirstOrDefault(c => c.EmployeeId == id);
-            return (entity != null ? MapEntityToEmployee(entity) : null) ?? new Employee();
+            return (entity != null ? MapEntityToEmployee(entity) : null) ?? new EmployeeModel();
         }
 
-        public EmployeeInfoResponseDto? Update(Employee employee)
+        public EmployeeInfoResponseDto? Update(EmployeeModel employeeModel)
         {
-            FitmoRE.Infrastructure.Persistence.Entities.Employee? existingEntity = _dbContext.Employees?.FirstOrDefault(c => c.EmployeeId == employee.EmployeeId);
+            Employee? existingEntity = _dbContext.Employees?.FirstOrDefault(c => c.EmployeeId == employeeModel.EmployeeId);
             if (existingEntity != null)
             {
-                existingEntity.Fullname = employee.FullName;
-                existingEntity.Phonenumber = employee.PhoneNumber;
-                existingEntity.Email = employee.Email;
-                existingEntity.Startdate = employee.StartDate;
-                existingEntity.Workschedule = employee.WorkSchedule;
-                existingEntity.Position = employee.Position;
-                existingEntity.Isactive = employee.IsActive;
+                existingEntity.Fullname = employeeModel.FullName;
+                existingEntity.Phonenumber = employeeModel.PhoneNumber;
+                existingEntity.Email = employeeModel.Email;
+                existingEntity.Startdate = employeeModel.StartDate;
+                existingEntity.Workschedule = employeeModel.WorkSchedule;
+                existingEntity.Position = employeeModel.Position;
+                existingEntity.Isactive = employeeModel.IsActive;
 
                 _dbContext.SaveChanges();
 
@@ -52,7 +53,7 @@ public class EmployeeRepository : IEmployeeRepository
 
         public EmployeeInfoDto? Delete(string employeeId)
         {
-            FitmoRE.Infrastructure.Persistence.Entities.Employee? entity = _dbContext.Employees?.FirstOrDefault(e => e.EmployeeId == employeeId);
+            Employee? entity = _dbContext.Employees?.FirstOrDefault(e => e.EmployeeId == employeeId);
             if (entity != null)
             {
                 _dbContext.Employees?.Remove(entity);
@@ -69,9 +70,9 @@ public class EmployeeRepository : IEmployeeRepository
             return employeeEntities?.Select(MapEntityToEmployeeInfoResponseDto) ?? Array.Empty<EmployeeInfoResponseDto>();
         }
 
-        private Employee MapEntityToEmployee(FitmoRE.Infrastructure.Persistence.Entities.Employee entity)
+        private EmployeeModel MapEntityToEmployee(Employee entity)
         {
-            return new Employee
+            return new EmployeeModel
             {
                 EmployeeId = entity.EmployeeId,
                 FullName = entity.Fullname,
@@ -84,9 +85,9 @@ public class EmployeeRepository : IEmployeeRepository
             };
         }
 
-        private FitmoRE.Infrastructure.Persistence.Entities.Employee MapEmployeeToEntity(Employee model)
+        private Employee MapEmployeeToEntity(EmployeeModel model)
         {
-            return new FitmoRE.Infrastructure.Persistence.Entities.Employee
+            return new Employee
             {
                 EmployeeId = model.EmployeeId,
                 Fullname = model.FullName,
@@ -99,7 +100,7 @@ public class EmployeeRepository : IEmployeeRepository
             };
         }
 
-        private EmployeeInfoResponseDto MapEntityToEmployeeInfoResponseDto(FitmoRE.Infrastructure.Persistence.Entities.Employee entity)
+        private EmployeeInfoResponseDto MapEntityToEmployeeInfoResponseDto(Employee entity)
         {
             return new EmployeeInfoResponseDto
             {
@@ -112,7 +113,7 @@ public class EmployeeRepository : IEmployeeRepository
             };
         }
 
-        private EmployeeInfoDto MapEntityToEmployeeInfoDto(FitmoRE.Infrastructure.Persistence.Entities.Employee entity)
+        private EmployeeInfoDto MapEntityToEmployeeInfoDto(Employee entity)
         {
             return new EmployeeInfoDto
             {

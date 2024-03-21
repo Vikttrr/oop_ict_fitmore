@@ -1,5 +1,5 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Application.Services.Interfaces;
 
@@ -15,8 +15,8 @@ public class RoomService : IRoomService
 
     public RoomInfoResponseDto GetRoomInfo(string roomId)
     {
-        Models.Entities.GymRoom room = _roomRepository.GetById(roomId);
-        if (string.IsNullOrEmpty(room.RoomId))
+        Models.Models.GymRoomModel roomModel = _roomRepository.GetById(roomId);
+        if (string.IsNullOrEmpty(roomModel.RoomId))
         {
             return new RoomInfoResponseDto()
             {
@@ -26,18 +26,18 @@ public class RoomService : IRoomService
 
         return new RoomInfoResponseDto
         {
-            RoomNum = room.RoomNumber,
-            Space = room.Space,
-            Temperature = room.Temperature,
-            Capacity = room.Capacity,
-            BranchId = room.BranchId,
+            RoomNum = roomModel.RoomNumber,
+            Space = roomModel.Space,
+            Temperature = roomModel.Temperature,
+            Capacity = roomModel.Capacity,
+            BranchId = roomModel.BranchId,
         };
     }
 
     public AddRoomResponseDto Add(AddRoomDto addRoomDto)
     {
-        var id = new Random().Next().ToString();
-        var gymRoom = new GymRoom(
+        string id = new Random().Next().ToString();
+        var gymRoom = new GymRoomModel(
             id,
             addRoomDto.RoomNumber,
             addRoomDto.Space,
@@ -45,7 +45,7 @@ public class RoomService : IRoomService
             addRoomDto.Capacity,
             addRoomDto.BranchId);
 
-        var newId = _roomRepository.Add(gymRoom);
+        string newId = _roomRepository.Add(gymRoom);
 
         return new AddRoomResponseDto
         {

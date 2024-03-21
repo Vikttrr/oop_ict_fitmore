@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitmoRE.Application.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05d35b63564b58e7bc3818994d8b5eb39cbe2d10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitmoRE.Application.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitmoRE.Application.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

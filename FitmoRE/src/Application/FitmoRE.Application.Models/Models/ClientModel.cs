@@ -1,6 +1,6 @@
-namespace FitmoRE.Application.Models.Entities;
+namespace FitmoRE.Application.Models.Models;
 
-public class Client
+public class ClientModel
 {
     public string ClientId { get; set; }
 
@@ -14,7 +14,7 @@ public class Client
 
     public bool IsActive { get; set; }
 
-    public Client(string clientId, string? fullName, string? dateOfBirth, string? phoneNumber, string? email, bool isActive)
+    public ClientModel(string clientId, string? fullName, string? dateOfBirth, string? phoneNumber, string? email, bool isActive)
     {
         ClientId = clientId;
         FullName = fullName;
@@ -24,7 +24,7 @@ public class Client
         IsActive = isActive;
     }
 
-    public Client()
+    public ClientModel()
     {
         ClientId = string.Empty;
     }

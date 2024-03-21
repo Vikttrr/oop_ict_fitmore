@@ -1,17 +1,17 @@
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 
 namespace FitmoRE.Application.Repositories;
 public interface ISubscriptionRepository
 {
-    string Add(Subscription subscription);
+    string Add(SubscriptionModel subscriptionModel);
 
-    Subscription? GetById(string subscriptionId);
+    SubscriptionModel? GetById(string subscriptionId);
 
-    Subscription? Update(Subscription subscription);
+    SubscriptionModel? Update(SubscriptionModel subscriptionModel);
 
-    Subscription? Delete(string subscriptionId);
+    SubscriptionModel? Delete(string subscriptionId);
 
-    IEnumerable<Subscription?> GetAll();
+    IEnumerable<SubscriptionModel?> GetAll();
 
-    IEnumerable<Subscription?> FindByClientId(string clientId);
+    IEnumerable<SubscriptionModel?> FindByClientId(string clientId);
 }
