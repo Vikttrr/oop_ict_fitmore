@@ -1,14 +1,14 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 
 namespace FitmoRE.Application.Repositories;
 public interface IEmployeeRepository
 {
-    string Add(Employee employee);
+    string Add(EmployeeModel employeeModel);
 
-    Employee GetById(string id);
+    EmployeeModel GetById(string id);
 
-    EmployeeInfoResponseDto? Update(Employee employee);
+    EmployeeInfoResponseDto? Update(EmployeeModel employeeModel);
 
     EmployeeInfoDto? Delete(string employeeId);
 

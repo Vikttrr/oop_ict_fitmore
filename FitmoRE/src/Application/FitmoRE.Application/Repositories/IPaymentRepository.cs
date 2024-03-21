@@ -1,14 +1,14 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 
 namespace FitmoRE.Application.Repositories;
 public interface IPaymentRepository
 {
-    string Add(Payment payment);
+    string Add(PaymentModel paymentModel);
 
-    Payment GetById(string paymentId);
+    PaymentModel GetById(string paymentId);
 
-    SubscriptionPurchaseResponseDto? Update(Payment payment);
+    SubscriptionPurchaseResponseDto? Update(PaymentModel paymentModel);
 
     IEnumerable<SubscriptionPurchaseResponseDto?> FindByClientId(string clientId);
 }

@@ -1,6 +1,6 @@
-namespace FitmoRE.Application.Models.Entities;
+namespace FitmoRE.Application.Models.Models;
 
-public class Subscription
+public class SubscriptionModel
 {
     public string SubscriptionId { get; set; }
 
@@ -9,23 +9,23 @@ public class Subscription
     public string StartDate { get; set; }
 
     // public string Duration { get; set; }
-    public Tariff Tariff { get; set; }
+    public TariffModel TariffModel { get; set; }
 
     public string ClientId { get; set; }
 
     public bool? IsActive { get; set; }
 
-    public Subscription(string subscriptionId, decimal price, string startDate, Tariff tariff, string clientId, bool isActive)
+    public SubscriptionModel(string subscriptionId, decimal price, string startDate, TariffModel tariffModel, string clientId, bool isActive)
     {
         SubscriptionId = subscriptionId;
         Price = price;
         StartDate = startDate;
-        Tariff = tariff;
+        TariffModel = tariffModel;
         ClientId = clientId;
         IsActive = isActive;
     }
 
-    public Subscription()
+    public SubscriptionModel()
     {
         throw new NotImplementedException();
     }

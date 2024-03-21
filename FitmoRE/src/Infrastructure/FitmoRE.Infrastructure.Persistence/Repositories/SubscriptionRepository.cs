@@ -1,6 +1,7 @@
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Infrastructure.Persistence.Contexts;
+using FitmoRE.Infrastructure.Persistence.Entities;
 
 namespace FitmoRE.Infrastructure.Persistence.Repositories;
 
@@ -13,29 +14,29 @@ public class SubscriptionRepository : ISubscriptionRepository
         _dbContext = dbContext;
     }
 
-    public string Add(Subscription subscription)
+    public string Add(SubscriptionModel subscriptionModel)
     {
-        Entities.Subscription entity = MapSubscriptionToEntity(subscription);
+        Subscription entity = MapSubscriptionToEntity(subscriptionModel);
         _dbContext.Subscriptions?.Add(entity);
         _dbContext.SaveChanges();
         return entity.Subscriptionid;
     }
 
-    public Subscription? GetById(string subscriptionId)
+    public SubscriptionModel? GetById(string subscriptionId)
     {
-        Entities.Subscription? entity = _dbContext.Subscriptions?.FirstOrDefault(s => s.Subscriptionid == subscriptionId);
+        Subscription? entity = _dbContext.Subscriptions?.FirstOrDefault(s => s.Subscriptionid == subscriptionId);
         return entity != null ? MapEntityToSubscription(entity) : null;
     }
 
-    public Subscription? Update(Subscription subscription)
+    public SubscriptionModel? Update(SubscriptionModel subscriptionModel)
     {
-        Entities.Subscription? existingEntity = _dbContext.Subscriptions?.FirstOrDefault(s => s.Subscriptionid == subscription.SubscriptionId);
+        Subscription? existingEntity = _dbContext.Subscriptions?.FirstOrDefault(s => s.Subscriptionid == subscriptionModel.SubscriptionId);
         if (existingEntity != null)
         {
-            existingEntity.Price = subscription.Price;
-            existingEntity.Startdate = subscription.StartDate;
-            existingEntity.Clientid = subscription.ClientId;
-            existingEntity.Isactive = subscription.IsActive;
+            existingEntity.Price = subscriptionModel.Price;
+            existingEntity.Startdate = subscriptionModel.StartDate;
+            existingEntity.Clientid = subscriptionModel.ClientId;
+            existingEntity.Isactive = subscriptionModel.IsActive;
 
             _dbContext.SaveChanges();
 
@@ -45,9 +46,9 @@ public class SubscriptionRepository : ISubscriptionRepository
         return null;
     }
 
-    public Subscription? Delete(string subscriptionId)
+    public SubscriptionModel? Delete(string subscriptionId)
     {
-        Entities.Subscription? entity = _dbContext.Subscriptions?.FirstOrDefault(s => s.Subscriptionid == subscriptionId);
+        Subscription? entity = _dbContext.Subscriptions?.FirstOrDefault(s => s.Subscriptionid == subscriptionId);
         if (entity != null)
         {
             _dbContext.Subscriptions?.Remove(entity);
@@ -58,32 +59,32 @@ public class SubscriptionRepository : ISubscriptionRepository
         return null;
     }
 
-    public IEnumerable<Subscription?> GetAll()
+    public IEnumerable<SubscriptionModel?> GetAll()
     {
         var entities = _dbContext.Subscriptions?.ToList();
         return (entities ?? throw new InvalidOperationException()).Select(MapEntityToSubscription);
     }
 
-    public IEnumerable<Subscription?> FindByClientId(string clientId)
+    public IEnumerable<SubscriptionModel?> FindByClientId(string clientId)
     {
         var entities = _dbContext.Subscriptions?.Where(s => s.Clientid == clientId).ToList();
         return (entities ?? throw new InvalidOperationException()).Select(MapEntityToSubscription);
     }
 
-    private Subscription? MapEntityToSubscription(FitmoRE.Infrastructure.Persistence.Entities.Subscription entity)
+    private SubscriptionModel? MapEntityToSubscription(Subscription entity)
     {
-        return new Subscription(
+        return new SubscriptionModel(
             entity.Subscriptionid,
             entity.Price ?? 0,
             entity.Startdate ?? string.Empty,
-            new Tariff(0, 0),
+            new TariffModel(0, 0),
             entity.Clientid ?? string.Empty,
             true);
     }
 
-    private FitmoRE.Infrastructure.Persistence.Entities.Subscription MapSubscriptionToEntity(Subscription model)
+    private Subscription MapSubscriptionToEntity(SubscriptionModel model)
     {
-        return new FitmoRE.Infrastructure.Persistence.Entities.Subscription
+        return new Subscription
         {
             Subscriptionid = model.SubscriptionId,
             Price = model.Price,

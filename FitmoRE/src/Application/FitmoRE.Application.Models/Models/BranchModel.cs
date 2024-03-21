@@ -1,6 +1,6 @@
-namespace FitmoRE.Application.Models.Entities;
+namespace FitmoRE.Application.Models.Models;
 
-public class Branch
+public class BranchModel
 {
     public string BranchId { get; set; }
 
@@ -8,7 +8,7 @@ public class Branch
 
     public string WorkingHours { get; set; }
 
-    public Branch(string branchId, string address, string workingHours)
+    public BranchModel(string branchId, string address, string workingHours)
     {
         BranchId = branchId;
         Address = address;

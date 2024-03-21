@@ -1,17 +1,17 @@
-namespace FitmoRE.Application.Models.Entities;
+namespace FitmoRE.Application.Models.Models;
 
-public class Tariff
+public class TariffModel
 {
     public TariffCategory Category { get; set; }
 
     public TariffType Type { get; set; }
 
-    public Tariff()
+    public TariffModel()
     {
         // Empty constructor
     }
 
-    public Tariff(TariffCategory category, TariffType type)
+    public TariffModel(TariffCategory category, TariffType type)
     {
         Category = category;
         Type = type;

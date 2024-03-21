@@ -1,7 +1,8 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Infrastructure.Persistence.Contexts;
+using FitmoRE.Infrastructure.Persistence.Entities;
 
 namespace FitmoRE.Infrastructure.Persistence.Repositories;
 
@@ -20,30 +21,30 @@ public class RoomRepository : IRoomRepository
             return employeeEntities?.Select(MapEntityToRoomInfoResponseDto) ?? Array.Empty<RoomInfoResponseDto>();
         }
 
-        public string Add(GymRoom room)
+        public string Add(GymRoomModel roomModel)
         {
-            FitmoRE.Infrastructure.Persistence.Entities.GymRoom entity = MapGymRoomToEntity(room);
+            GymRoom entity = MapGymRoomToEntity(roomModel);
             _dbContext.GymRooms?.Add(entity);
             _dbContext.SaveChanges();
             return entity.RoomId;
         }
 
-        public GymRoom GetById(string roomId)
+        public GymRoomModel GetById(string roomId)
         {
-            FitmoRE.Infrastructure.Persistence.Entities.GymRoom? entity = _dbContext.GymRooms?.FirstOrDefault(r => r.RoomId == roomId);
-            return (entity != null ? MapEntityToGymRoom(entity) : null) ?? new GymRoom();
+            GymRoom? entity = _dbContext.GymRooms?.FirstOrDefault(r => r.RoomId == roomId);
+            return (entity != null ? MapEntityToGymRoom(entity) : null) ?? new GymRoomModel();
         }
 
-        public RoomInfoResponseDto? Update(GymRoom room)
+        public RoomInfoResponseDto? Update(GymRoomModel roomModel)
         {
-            FitmoRE.Infrastructure.Persistence.Entities.GymRoom? existingEntity = _dbContext.GymRooms?.FirstOrDefault(r => r.RoomId == room.RoomId);
+            GymRoom? existingEntity = _dbContext.GymRooms?.FirstOrDefault(r => r.RoomId == roomModel.RoomId);
             if (existingEntity != null)
             {
-                existingEntity.RoomNumber = room.RoomNumber;
-                existingEntity.Space = room.Space;
-                existingEntity.Temperature = room.Temperature;
-                existingEntity.Capacity = room.Capacity;
-                existingEntity.BranchId = room.BranchId;
+                existingEntity.RoomNumber = roomModel.RoomNumber;
+                existingEntity.Space = roomModel.Space;
+                existingEntity.Temperature = roomModel.Temperature;
+                existingEntity.Capacity = roomModel.Capacity;
+                existingEntity.BranchId = roomModel.BranchId;
 
                 _dbContext.SaveChanges();
 
@@ -55,7 +56,7 @@ public class RoomRepository : IRoomRepository
 
         public RoomInfoDto? Delete(string roomId)
         {
-            FitmoRE.Infrastructure.Persistence.Entities.GymRoom? entity = _dbContext.GymRooms?.FirstOrDefault(r => r.RoomId == roomId);
+            GymRoom? entity = _dbContext.GymRooms?.FirstOrDefault(r => r.RoomId == roomId);
             if (entity != null)
             {
                 _dbContext.GymRooms?.Remove(entity);
@@ -66,9 +67,9 @@ public class RoomRepository : IRoomRepository
             return null;
         }
 
-        private GymRoom MapEntityToGymRoom(FitmoRE.Infrastructure.Persistence.Entities.GymRoom entity)
+        private GymRoomModel MapEntityToGymRoom(GymRoom entity)
         {
-            return new GymRoom(
+            return new GymRoomModel(
                 entity.RoomId,
                 entity.RoomNumber,
                 entity.Space ?? 0,
@@ -77,7 +78,7 @@ public class RoomRepository : IRoomRepository
                 "0");
         }
 
-        private RoomInfoResponseDto? MapEntityToRoomInfoResponseDto(FitmoRE.Infrastructure.Persistence.Entities.GymRoom entity)
+        private RoomInfoResponseDto? MapEntityToRoomInfoResponseDto(GymRoom entity)
         {
             return new RoomInfoResponseDto
             {
@@ -89,7 +90,7 @@ public class RoomRepository : IRoomRepository
             };
         }
 
-        private RoomInfoDto? MapEntityToRoomInfoDto(FitmoRE.Infrastructure.Persistence.Entities.GymRoom entity)
+        private RoomInfoDto? MapEntityToRoomInfoDto(GymRoom entity)
         {
             return new RoomInfoDto
             {
@@ -97,15 +98,15 @@ public class RoomRepository : IRoomRepository
             };
         }
 
-        private FitmoRE.Infrastructure.Persistence.Entities.GymRoom MapGymRoomToEntity(GymRoom room)
+        private GymRoom MapGymRoomToEntity(GymRoomModel roomModel)
         {
-            return new FitmoRE.Infrastructure.Persistence.Entities.GymRoom
+            return new GymRoom
             {
-                RoomId = room.RoomId,
-                RoomNumber = room.RoomNumber,
-                Space = room.Space,
-                Temperature = room.Temperature,
-                Capacity = room.Capacity,
+                RoomId = roomModel.RoomId,
+                RoomNumber = roomModel.RoomNumber,
+                Space = roomModel.Space,
+                Temperature = roomModel.Temperature,
+                Capacity = roomModel.Capacity,
             };
         }
     }

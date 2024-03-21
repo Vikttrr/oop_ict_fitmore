@@ -1,5 +1,5 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Application.Services.Interfaces;
 
@@ -15,8 +15,8 @@ public class UserService : IUserService
 
     public UserRegistrationResponseDto RegisterUser(UserRegistrationDto registrationDto)
     {
-        var id = new Random().Next().ToString();
-        var client = new Client(
+        string id = new Random().Next().ToString();
+        var client = new ClientModel(
             id,
             registrationDto.FullName,
             registrationDto.BirthDate,
@@ -33,8 +33,8 @@ public class UserService : IUserService
 
     public UserInfoResponseDto GetUserInfo(string clientId)
     {
-        Client client = _userRepository.GetById(clientId);
-        if (string.IsNullOrEmpty(client.ClientId))
+        ClientModel clientModel = _userRepository.GetById(clientId);
+        if (string.IsNullOrEmpty(clientModel.ClientId))
         {
             return new UserInfoResponseDto()
             {
@@ -44,18 +44,18 @@ public class UserService : IUserService
 
         return new UserInfoResponseDto
         {
-            FullName = client.FullName,
-            BirthDate = client.DateOfBirth,
-            Phone = client.PhoneNumber,
-            Email = client.Email,
-            IsActive = client.IsActive,
-            ClientId = client.ClientId,
+            FullName = clientModel.FullName,
+            BirthDate = clientModel.DateOfBirth,
+            Phone = clientModel.PhoneNumber,
+            Email = clientModel.Email,
+            IsActive = clientModel.IsActive,
+            ClientId = clientModel.ClientId,
         };
     }
 
     public UserAuthResponseDto AuthenticateUser(UserAuthDto authDto)
     {
-        Client? client = _userRepository.FindByPhoneAndClientId(authDto.ClientId, authDto.Phone);
+        ClientModel? client = _userRepository.FindByPhoneAndClientId(authDto.ClientId, authDto.Phone);
 
         if (client == null)
         {

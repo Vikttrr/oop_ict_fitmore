@@ -1,4 +1,4 @@
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 
 namespace FitmoRE.Application.DTO;
 public class AddSubscriptionDto
@@ -8,7 +8,7 @@ public class AddSubscriptionDto
     public string StartDate { get; set; } = string.Empty;
 
     // public string Duration { get; set; } = string.Empty;
-    public Tariff Tariff { get; set; } = new Tariff();
+    public TariffModel TariffModel { get; set; } = new TariffModel();
 
     public string UserId { get; set; } = string.Empty;
 

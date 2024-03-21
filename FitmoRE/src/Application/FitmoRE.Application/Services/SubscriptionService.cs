@@ -1,5 +1,5 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Application.Services.Interfaces;
 
@@ -15,12 +15,12 @@ public class SubscriptionService : ISubscriptionService
 
     public AddSubscriptionResponseDto AddSubscription(AddSubscriptionDto subscriptionDto)
     {
-        var id = new Random().Next().ToString();
-        var subscription = new Subscription(
+        string id = new Random().Next().ToString();
+        var subscription = new SubscriptionModel(
             id,
             subscriptionDto.Price,
             DateTime.Parse(subscriptionDto.StartDate).ToString(),
-            subscriptionDto.Tariff,
+            subscriptionDto.TariffModel,
             subscriptionDto.UserId,
             subscriptionDto.IsActive);
         string newId = _subscriptionRepository.Add(subscription);
@@ -33,7 +33,7 @@ public class SubscriptionService : ISubscriptionService
 
     public SubscriptionInfoResponseDto GetSubscriptionById(string subscriptionId)
     {
-        Subscription? subscription = _subscriptionRepository.GetById(subscriptionId);
+        SubscriptionModel? subscription = _subscriptionRepository.GetById(subscriptionId);
         if (subscription == null)
         {
             return new SubscriptionInfoResponseDto()
@@ -47,7 +47,7 @@ public class SubscriptionService : ISubscriptionService
             SubscriptionId = subscription.SubscriptionId,
             Price = subscription.Price,
             StartDate = subscription.StartDate,
-            Tariff = subscription.Tariff,
+            TariffModel = subscription.TariffModel,
             UserId = subscription.ClientId,
             IsActive = true,
         };

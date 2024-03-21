@@ -1,6 +1,6 @@
-namespace FitmoRE.Application.Models.Entities;
+namespace FitmoRE.Application.Models.Models;
 
-public class Employee
+public class EmployeeModel
 {
     public string EmployeeId { get; set; } = string.Empty;
 
@@ -18,7 +18,7 @@ public class Employee
 
     public bool? IsActive { get; set; }
 
-    public Employee(string employeeId, string? fullName, string? phoneNumber, string? email, string? startDate, string? workSchedule, string? position, bool isActive)
+    public EmployeeModel(string employeeId, string? fullName, string? phoneNumber, string? email, string? startDate, string? workSchedule, string? position, bool isActive)
     {
         EmployeeId = employeeId;
         FullName = fullName;
@@ -30,7 +30,7 @@ public class Employee
         IsActive = isActive;
     }
 
-    public Employee()
+    public EmployeeModel()
     {
         EmployeeId = string.Empty;
     }

@@ -1,7 +1,8 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Infrastructure.Persistence.Contexts;
+using FitmoRE.Infrastructure.Persistence.Entities;
 
 namespace FitmoRE.Infrastructure.Persistence.Repositories;
 
@@ -14,9 +15,9 @@ public class TrainingRegistrationRepository : ITrainingRegistrationRepository
         _dbContext = dbContext;
     }
 
-    public string Add(TrainingRegistration fitnessService)
+    public string Add(TrainingRegistrationModel fitnessService)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.TrainingRegistration entity = MapTrainingRegistrationToEntity(fitnessService);
+        TrainingRegistration entity = MapTrainingRegistrationToEntity(fitnessService);
         _dbContext.TrainingRegistrations?.Add(entity);
         _dbContext.SaveChanges();
         return entity.Registrationid;
@@ -24,25 +25,25 @@ public class TrainingRegistrationRepository : ITrainingRegistrationRepository
 
     public TrainingSignupDto? GetById(string registrationId)
     {
-        Entities.TrainingRegistration? entity = _dbContext.TrainingRegistrations?.FirstOrDefault(r => r.Registrationid == registrationId);
+        TrainingRegistration? entity = _dbContext.TrainingRegistrations?.FirstOrDefault(r => r.Registrationid == registrationId);
         return entity != null ? MapEntityToTrainingSignupDto(entity) : null;
     }
 
-    public TrainingSignupResponseDto Update(FitnessService fitnessService)
+    public TrainingSignupResponseDto Update(FitnessServiceModel fitnessServiceModel)
     {
         throw new NotImplementedException();
     }
 
-    public TrainingSignupResponseDto? Update(TrainingRegistration registration)
+    public TrainingSignupResponseDto? Update(TrainingRegistrationModel registrationModel)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.TrainingRegistration? existingEntity = _dbContext.TrainingRegistrations?.FirstOrDefault(r => r.Registrationid == registration.RegistrationId);
+        TrainingRegistration? existingEntity = _dbContext.TrainingRegistrations?.FirstOrDefault(r => r.Registrationid == registrationModel.RegistrationId);
         if (existingEntity != null)
         {
-            existingEntity.Trainingid = registration.TrainingId;
-            existingEntity.Clientid = registration.ClientId;
+            existingEntity.Trainingid = registrationModel.TrainingId;
+            existingEntity.Clientid = registrationModel.ClientId;
 
             // existingEntity.Registrationdate = registration.RegistrationDate;
-            existingEntity.Isconfirmed = registration.IsConfirmed;
+            existingEntity.Isconfirmed = registrationModel.IsConfirmed;
             _dbContext.SaveChanges();
             return MapEntityToTrainingSignupResponseDto(existingEntity);
         }
@@ -52,7 +53,7 @@ public class TrainingRegistrationRepository : ITrainingRegistrationRepository
 
     public TrainingSignupDto? Delete(string registrationId)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.TrainingRegistration? entity = _dbContext.TrainingRegistrations?.FirstOrDefault(r => r.Registrationid == registrationId);
+        TrainingRegistration? entity = _dbContext.TrainingRegistrations?.FirstOrDefault(r => r.Registrationid == registrationId);
         if (entity != null)
         {
             _dbContext.TrainingRegistrations?.Remove(entity);
@@ -75,9 +76,9 @@ public class TrainingRegistrationRepository : ITrainingRegistrationRepository
         return (entities ?? throw new InvalidOperationException()).Select(MapEntityToTrainingSignupDto);
     }
 
-    private FitmoRE.Infrastructure.Persistence.Entities.TrainingRegistration MapTrainingRegistrationToEntity(TrainingRegistration model)
+    private TrainingRegistration MapTrainingRegistrationToEntity(TrainingRegistrationModel model)
     {
-        return new FitmoRE.Infrastructure.Persistence.Entities.TrainingRegistration
+        return new TrainingRegistration
         {
             Registrationid = model.RegistrationId,
             Trainingid = model.TrainingId,
@@ -88,7 +89,7 @@ public class TrainingRegistrationRepository : ITrainingRegistrationRepository
         };
     }
 
-    private TrainingSignupDto? MapEntityToTrainingSignupDto(FitmoRE.Infrastructure.Persistence.Entities.TrainingRegistration entity)
+    private TrainingSignupDto? MapEntityToTrainingSignupDto(TrainingRegistration entity)
     {
         return new TrainingSignupDto
         {
@@ -99,7 +100,7 @@ public class TrainingRegistrationRepository : ITrainingRegistrationRepository
         };
     }
 
-    private TrainingSignupResponseDto? MapEntityToTrainingSignupResponseDto(FitmoRE.Infrastructure.Persistence.Entities.TrainingRegistration entity)
+    private TrainingSignupResponseDto? MapEntityToTrainingSignupResponseDto(TrainingRegistration entity)
     {
         return new TrainingSignupResponseDto
         {

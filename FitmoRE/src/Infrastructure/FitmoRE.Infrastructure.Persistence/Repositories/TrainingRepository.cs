@@ -1,7 +1,8 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Infrastructure.Persistence.Contexts;
+using FitmoRE.Infrastructure.Persistence.Entities;
 
 namespace FitmoRE.Infrastructure.Persistence.Repositories;
     public class TrainingRepository : ITrainingRepository
@@ -13,31 +14,31 @@ namespace FitmoRE.Infrastructure.Persistence.Repositories;
             _dbContext = dbContext;
         }
 
-        public string Add(TrainingSession trainingSession)
+        public string Add(TrainingSessionModel trainingSessionModel)
         {
-            Entities.TrainingSession entity = MapTrainingToEntity(trainingSession);
+            TrainingSession entity = MapTrainingToEntity(trainingSessionModel);
             _dbContext.TrainingSessions?.Add(entity);
             _dbContext.SaveChanges();
             return entity.Trainingid;
         }
 
-        public TrainingSession? GetById(string trainingId)
+        public TrainingSessionModel? GetById(string trainingId)
         {
-            Entities.TrainingSession? entity = _dbContext.TrainingSessions?.FirstOrDefault(t => t.Trainingid == trainingId);
+            TrainingSession? entity = _dbContext.TrainingSessions?.FirstOrDefault(t => t.Trainingid == trainingId);
             return entity != null ? MapEntityToTraining(entity) : null;
         }
 
-        public TrainingInfoResponseDto? Update(TrainingSession trainingSession)
+        public TrainingInfoResponseDto? Update(TrainingSessionModel trainingSessionModel)
         {
-            Entities.TrainingSession? existingEntity = _dbContext.TrainingSessions?.FirstOrDefault(t => t.Trainingid == trainingSession.TrainingId);
+            TrainingSession? existingEntity = _dbContext.TrainingSessions?.FirstOrDefault(t => t.Trainingid == trainingSessionModel.TrainingId);
             if (existingEntity != null)
             {
-                existingEntity.Roomid = trainingSession.RoomId;
-                existingEntity.Employeeid = trainingSession.EmployeeId;
-                existingEntity.Numberofparticipants = trainingSession.NumberOfParticipants;
-                existingEntity.Starttime = trainingSession.StartTime;
-                existingEntity.Endtime = trainingSession.EndTime;
-                existingEntity.Description = trainingSession.Description;
+                existingEntity.Roomid = trainingSessionModel.RoomId;
+                existingEntity.Employeeid = trainingSessionModel.EmployeeId;
+                existingEntity.Numberofparticipants = trainingSessionModel.NumberOfParticipants;
+                existingEntity.Starttime = trainingSessionModel.StartTime;
+                existingEntity.Endtime = trainingSessionModel.EndTime;
+                existingEntity.Description = trainingSessionModel.Description;
 
                 _dbContext.SaveChanges();
 
@@ -49,7 +50,7 @@ namespace FitmoRE.Infrastructure.Persistence.Repositories;
 
         public AddTrainingDto? Delete(string trainingId)
         {
-            Entities.TrainingSession? entity = _dbContext.TrainingSessions?.FirstOrDefault(t => t.Trainingid == trainingId);
+            TrainingSession? entity = _dbContext.TrainingSessions?.FirstOrDefault(t => t.Trainingid == trainingId);
             if (entity != null)
             {
                 _dbContext.TrainingSessions?.Remove(entity);
@@ -66,9 +67,9 @@ namespace FitmoRE.Infrastructure.Persistence.Repositories;
             return (entities ?? throw new InvalidOperationException()).Select(MapEntityToTrainingInfoResponseDto);
         }
 
-        private TrainingSession? MapEntityToTraining(FitmoRE.Infrastructure.Persistence.Entities.TrainingSession entity)
+        private TrainingSessionModel? MapEntityToTraining(TrainingSession entity)
         {
-            return new TrainingSession(
+            return new TrainingSessionModel(
                 entity.Trainingid,
                 entity.Roomid ?? string.Empty,
                 entity.Employeeid,
@@ -78,9 +79,9 @@ namespace FitmoRE.Infrastructure.Persistence.Repositories;
                 entity.Description);
         }
 
-        private FitmoRE.Infrastructure.Persistence.Entities.TrainingSession MapTrainingToEntity(TrainingSession model)
+        private TrainingSession MapTrainingToEntity(TrainingSessionModel model)
         {
-            return new FitmoRE.Infrastructure.Persistence.Entities.TrainingSession
+            return new TrainingSession
             {
                 Trainingid = model.TrainingId,
                 Roomid = model.RoomId,
@@ -92,7 +93,7 @@ namespace FitmoRE.Infrastructure.Persistence.Repositories;
             };
         }
 
-        private TrainingInfoResponseDto MapEntityToTrainingInfoResponseDto(FitmoRE.Infrastructure.Persistence.Entities.TrainingSession entity)
+        private TrainingInfoResponseDto MapEntityToTrainingInfoResponseDto(TrainingSession entity)
         {
             return new TrainingInfoResponseDto
             {
@@ -105,7 +106,7 @@ namespace FitmoRE.Infrastructure.Persistence.Repositories;
             };
         }
 
-        private AddTrainingDto MapEntityToAddTrainingDto(FitmoRE.Infrastructure.Persistence.Entities.TrainingSession entity)
+        private AddTrainingDto MapEntityToAddTrainingDto(TrainingSession entity)
         {
             return new AddTrainingDto
             {

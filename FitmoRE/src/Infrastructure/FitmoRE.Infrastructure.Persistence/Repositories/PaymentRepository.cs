@@ -1,7 +1,8 @@
 using FitmoRE.Application.DTO;
-using FitmoRE.Application.Models.Entities;
+using FitmoRE.Application.Models.Models;
 using FitmoRE.Application.Repositories;
 using FitmoRE.Infrastructure.Persistence.Contexts;
+using FitmoRE.Infrastructure.Persistence.Entities;
 
 namespace FitmoRE.Infrastructure.Persistence.Repositories;
 
@@ -14,29 +15,29 @@ public class PaymentRepository : IPaymentRepository
         _dbContext = dbContext;
     }
 
-    public string Add(Payment payment)
+    public string Add(PaymentModel paymentModel)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.Payment entity = MapPaymentToEntity(payment);
+        Payment entity = MapPaymentToEntity(paymentModel);
         _dbContext.Payments?.Add(entity);
         _dbContext.SaveChanges();
         return entity.Paymentid;
     }
 
-    public Payment GetById(string paymentId)
+    public PaymentModel GetById(string paymentId)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.Payment? entity = _dbContext.Payments?.FirstOrDefault(c => c.Paymentid == paymentId);
+        Payment? entity = _dbContext.Payments?.FirstOrDefault(c => c.Paymentid == paymentId);
         return (entity != null ? MapEntityToPayment(entity) : null) ?? throw new InvalidOperationException();
     }
 
-    public SubscriptionPurchaseResponseDto? Update(Payment payment)
+    public SubscriptionPurchaseResponseDto? Update(PaymentModel paymentModel)
     {
-        FitmoRE.Infrastructure.Persistence.Entities.Payment? existingEntity = _dbContext.Payments?.FirstOrDefault(p => p.Paymentid == payment.PaymentId);
+        Payment? existingEntity = _dbContext.Payments?.FirstOrDefault(p => p.Paymentid == paymentModel.PaymentId);
         if (existingEntity != null)
         {
-            existingEntity.Clientid = payment.ClientId;
-            existingEntity.Date = payment.Date;
-            existingEntity.Amount = payment.Amount;
-            existingEntity.Ispaid = payment.IsPaid;
+            existingEntity.Clientid = paymentModel.ClientId;
+            existingEntity.Date = paymentModel.Date;
+            existingEntity.Amount = paymentModel.Amount;
+            existingEntity.Ispaid = paymentModel.IsPaid;
 
             _dbContext.SaveChanges();
 
@@ -52,9 +53,9 @@ public class PaymentRepository : IPaymentRepository
         return (entities ?? throw new InvalidOperationException()).Select(MapEntityToSubscriptionPurchaseResponseDto);
     }
 
-    private Payment MapEntityToPayment(FitmoRE.Infrastructure.Persistence.Entities.Payment entity)
+    private PaymentModel MapEntityToPayment(Payment entity)
     {
-        return new Payment
+        return new PaymentModel
         {
             PaymentId = entity.Paymentid,
             ClientId = entity.Clientid,
@@ -64,9 +65,9 @@ public class PaymentRepository : IPaymentRepository
         };
     }
 
-    private FitmoRE.Infrastructure.Persistence.Entities.Payment MapPaymentToEntity(Payment model)
+    private Payment MapPaymentToEntity(PaymentModel model)
     {
-        return new FitmoRE.Infrastructure.Persistence.Entities.Payment
+        return new Payment
         {
             Paymentid = model.PaymentId,
             Clientid = model.ClientId,
@@ -76,7 +77,7 @@ public class PaymentRepository : IPaymentRepository
         };
     }
 
-    private SubscriptionPurchaseResponseDto? MapEntityToSubscriptionPurchaseResponseDto(FitmoRE.Infrastructure.Persistence.Entities.Payment entity)
+    private SubscriptionPurchaseResponseDto? MapEntityToSubscriptionPurchaseResponseDto(Payment entity)
     {
         return new SubscriptionPurchaseResponseDto
         {
