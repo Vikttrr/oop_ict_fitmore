@@ -1,15 +1,14 @@
 using FitmoRE.Application.DTO;
 using MediatR;
 
-namespace FitmoRE.Application.Commands
-{
-    public class AddEmployeeCommand : IRequest<AddEmployeeResponseDto>
-    {
-        public AddEmployeeDto EmployeeDto { get; }
+namespace FitmoRE.Application.Events.Commands;
 
-        public AddEmployeeCommand(AddEmployeeDto employeeDto)
-        {
-            EmployeeDto = employeeDto;
-        }
+public class AddEmployeeCommand : IRequest<AddEmployeeResponseDto>
+{
+    public AddEmployeeDto EmployeeDto { get; }
+
+    public AddEmployeeCommand(AddEmployeeDto employeeDto)
+    {
+        EmployeeDto = employeeDto;
     }
 }
